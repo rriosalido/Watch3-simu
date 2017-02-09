@@ -63,6 +63,11 @@ class TableViewController: UITableViewController, WCSessionDelegate, MFMailCompo
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+         tableView.reloadData()
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

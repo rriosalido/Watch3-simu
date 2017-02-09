@@ -12,7 +12,7 @@ class AnotateIphoneViewController: UIViewController {
     
     
     //MARK: Variables
-    
+   
     var maxRondas = 3
     var maxFlechas = 6
     var numShots = 0
@@ -50,6 +50,7 @@ class AnotateIphoneViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /*
         nextButton.isEnabled = false
         nextButton.alpha = 0.5
         endButton.isEnabled = false
@@ -58,7 +59,7 @@ class AnotateIphoneViewController: UIViewController {
         parcialScore.text = labelScore
         clearLast.isEnabled = false
         clearLast.alpha = 0.5
-        
+        */
         /*
          config = context as! [Int]
          self.maxRondas = config[0]
@@ -67,10 +68,14 @@ class AnotateIphoneViewController: UIViewController {
          */
         tiradas[0]=[String(distancia)+"m"]
         
+        initAnotate()
+        
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        
         
     }
     
@@ -138,10 +143,14 @@ class AnotateIphoneViewController: UIViewController {
                 print("You've pressed the Save button")
                 print(Realm.Configuration.defaultConfiguration.fileURL!)
             
+                // Hay que limpiar
+                self.initAnotate()
+                
             }
             
             let actionNo = UIAlertAction(title: "Discard", style: .default) { (action:UIAlertAction) in
-                print("You've pressed Discard button");
+                print("You've pressed Discard button")
+                self.initAnotate()
             }
             
             alertController.addAction(actionYes)
@@ -282,6 +291,39 @@ class AnotateIphoneViewController: UIViewController {
         buttonX.alpha = 1.0
     }
     
+    
+    func initAnotate () {
+        
+        maxRondas = 3
+        maxFlechas = 6
+        numShots = 0
+        ronda = 1
+        puntosTirada = [String]()
+        tiradas = [[String]()]
+        labelScore = " "
+        distancia = 15
+        config = [Int]()
+        
+        nextButton.isEnabled = false
+        nextButton.alpha = 0.5
+        endButton.isEnabled = false
+        endButton.alpha = 0.5
+        numRonda.text = "Ronda Nº 1 de " + String(maxRondas)
+        labelScore = ""
+        parcialScore.text = labelScore
+        clearLast.isEnabled = false
+        clearLast.alpha = 0.5
+        
+        enableButtons()
+        
+        /*
+         config = context as! [Int]
+         self.maxRondas = config[0]
+         self.maxFlechas = config[1]
+         self.distancia = config[2]
+         */
+        tiradas[0]=[String(distancia)+"m"]
+    }
     /*
      // MARK: - Navigation
      
