@@ -11,6 +11,7 @@
 		8C00A49E1E43BD50004A5BB1 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8C00A49C1E43BD50004A5BB1 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8C0219A31E313DA0002254CC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0219A21E313DA0002254CC /* Model.swift */; };
 		8C0219E81E31537F002254CC /* ResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0219E71E31537F002254CC /* ResultsController.swift */; };
+		8C0AB6C01E4C960A00267BA8 /* AnotateIphoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0AB6BF1E4C960A00267BA8 /* AnotateIphoneViewController.swift */; };
 		8C211E9D1E3FC66800267833 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C211E9C1E3FC66800267833 /* Realm.framework */; };
 		8C211E9E1E3FC66800267833 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8C211E9C1E3FC66800267833 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8C211EA01E3FC67600267833 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C211E9F1E3FC67600267833 /* RealmSwift.framework */; };
@@ -91,6 +92,7 @@
 		8C00A49C1E43BD50004A5BB1 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Charts.framework; sourceTree = "<group>"; };
 		8C0219A21E313DA0002254CC /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		8C0219E71E31537F002254CC /* ResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultsController.swift; path = "../Watch1 WatchKit App/ResultsController.swift"; sourceTree = "<group>"; };
+		8C0AB6BF1E4C960A00267BA8 /* AnotateIphoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnotateIphoneViewController.swift; sourceTree = "<group>"; };
 		8C211E9C1E3FC66800267833 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		8C211E9F1E3FC67600267833 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		8C388D3C1E2E936300498790 /* Watch1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watch1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,6 +172,7 @@
 				8C90BA841E3A894900469AA1 /* TableViewController.swift */,
 				8C90BA861E3A913300469AA1 /* DetailViewController.swift */,
 				8C388D431E2E936300498790 /* Main.storyboard */,
+				8C0AB6BF1E4C960A00267BA8 /* AnotateIphoneViewController.swift */,
 				8CCF02201E425A4800C26194 /* ModelDB.swift */,
 				8C388D461E2E936300498790 /* Assets.xcassets */,
 				8C388D481E2E936300498790 /* LaunchScreen.storyboard */,
@@ -406,6 +409,7 @@
 			files = (
 				8CCF02211E425A4800C26194 /* ModelDB.swift in Sources */,
 				8C90BA851E3A894900469AA1 /* TableViewController.swift in Sources */,
+				8C0AB6C01E4C960A00267BA8 /* AnotateIphoneViewController.swift in Sources */,
 				8C90BA871E3A913300469AA1 /* DetailViewController.swift in Sources */,
 				8C388D401E2E936300498790 /* AppDelegate.swift in Sources */,
 			);
