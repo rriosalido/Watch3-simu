@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class AnotateIphoneViewController: UIViewController {
     
@@ -119,7 +120,24 @@ class AnotateIphoneViewController: UIViewController {
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
             
             let actionYes = UIAlertAction(title: "Save", style: .default) { (action:UIAlertAction) in
-                print("You've pressed the Save button");
+                
+                let mydata = ShotDB()
+                mydata.fecha = Date()
+                mydata.dist = dist
+                mydata.total = myshot.total
+                mydata.media = myshot.media
+                mydata.tiros = myshot.tiros
+                mydata.std = myshot.std
+                mydata.puntos = stabla
+                
+                let realm = try! Realm()
+                try! realm.write {
+                    realm.add(mydata)
+                    print ("Añadido Registro")
+                }
+                print("You've pressed the Save button")
+                print(Realm.Configuration.defaultConfiguration.fileURL!)
+            
             }
             
             let actionNo = UIAlertAction(title: "Discard", style: .default) { (action:UIAlertAction) in
@@ -129,6 +147,9 @@ class AnotateIphoneViewController: UIViewController {
             alertController.addAction(actionYes)
             alertController.addAction(actionNo)
             self.present(alertController, animated: true, completion:nil)
+            
+            
+            
             
         } else {
             numRonda.text = "Ronda Nº " + String(ronda) + " de " + String(maxRondas)
