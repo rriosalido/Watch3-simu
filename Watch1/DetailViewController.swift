@@ -35,7 +35,7 @@ class DetailViewController: UIViewController {
         let fecha = decodeDate(myshot.fecha)
         
         fechaLabel.text = fecha
-        distLabel.text = "Dist= " + myshot.dist + "m"
+        distLabel.text = "Dist= " + myshot.dist
         tirosLabel.text = "Tiros= "+String(myshot.tiros)
         mediaLabel.text = "Media= "+String(myshot.media)
         totalLabel.text = "Total= "+String(myshot.total)
@@ -78,7 +78,7 @@ class DetailViewController: UIViewController {
         
         barChartView.data = chartData
         
-        barChartView.chartDescription?.text = "Frecuencia %"
+        barChartView.chartDescription?.text = nil
         
         //chartDataSet.colors = ChartColorTemplates.colorful()
         
@@ -88,20 +88,24 @@ class DetailViewController: UIViewController {
         
         
         
+        let labels = ["M","1","2","3","4","5","6","7","8","9","10","X"]
+        barChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: labels)
+        barChartView.xAxis.granularityEnabled = true
+        barChartView.xAxis.granularity = 1
         barChartView.xAxis.labelPosition = .bottom
-        
         barChartView.leftAxis.axisMinimum = 0.0
         barChartView.rightAxis.axisMinimum = 0.0
         
         
         //barChartView.backgroundColor = UIColor(red: 189/255, green: 195/255, blue: 199/255, alpha: 1)
-        barChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0)
+        barChartView.animate(xAxisDuration: 1.0, yAxisDuration: 1.0)
         
         let ll = ChartLimitLine(limit: media, label: "Media")
         
         barChartView.rightAxis.addLimitLine(ll)
         
         barChartView.legend.enabled = false
+        
         //barChartView.scaleYEnabled = false
         //barChartView.scaleXEnabled = false
         //barChartView.pinchZoomEnabled = false
@@ -109,7 +113,7 @@ class DetailViewController: UIViewController {
         //barChartView.highlighter = nil
         //barChartView.rightAxis.enabled = false
         //barChartView.leftAxis.enabled = false
-        //barChartView.xAxis.drawGridLinesEnabled = false
+        //barChartView.xAxis.drawGridLinesEnabled = false   
     }
     
     /*
