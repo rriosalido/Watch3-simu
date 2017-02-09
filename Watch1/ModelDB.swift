@@ -77,3 +77,21 @@ func sumaRonda (_ array: [String]) -> Int {
     return suma
 }
 
+func tablaFreq (_ array:[[String]]) -> [Int]{
+    var tabla = [Int](repeating: 0, count: 12)
+    var point : String
+    for i in 1..<array.count {
+        for j in 0..<array[i].count {
+            point = array[i][j]
+            switch point {
+            case "M":
+                tabla[0] += 1
+            case "X":
+                tabla[11] += 1
+            default:
+                tabla[punt2int(point)] += 1
+            }
+        }
+    }
+    return tabla
+}

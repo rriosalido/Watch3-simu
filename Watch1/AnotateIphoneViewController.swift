@@ -102,6 +102,33 @@ class AnotateIphoneViewController: UIViewController {
         if ronda > maxRondas {
             nextButton.isEnabled = false
             //   WKInterfaceController.reloadRootControllers(withNames: ["ResultsController"], contexts: [tiradas])
+            // Visualizar resltados y pasar TableView
+            
+            let tabla = tablaFreq(tiradas)
+            
+            let arrayString = tabla.map {String($0)}
+            let stabla = arrayString.joined(separator: "-")
+            let dist = tiradas[0][0]
+            
+            let myshot = statS(stabla)
+            
+            
+            let title = "Resultados"
+            let message = "Tiros: " + String (myshot.tiros) + " Media: "+String(myshot.media) + " Desv.T: " + String(myshot.std)
+            
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            
+            let actionYes = UIAlertAction(title: "Save", style: .default) { (action:UIAlertAction) in
+                print("You've pressed the Save button");
+            }
+            
+            let actionNo = UIAlertAction(title: "Discard", style: .default) { (action:UIAlertAction) in
+                print("You've pressed Discard button");
+            }
+            
+            alertController.addAction(actionYes)
+            alertController.addAction(actionNo)
+            self.present(alertController, animated: true, completion:nil)
             
         } else {
             numRonda.text = "Ronda Nº " + String(ronda) + " de " + String(maxRondas)
