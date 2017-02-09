@@ -30,7 +30,7 @@ class TableViewController: UITableViewController, WCSessionDelegate, MFMailCompo
     let realm = try! Realm()
     let results = try! Realm().objects(ShotDB.self).sorted(byKeyPath: "fecha", ascending: false)
     
-    
+    var fileURL : URL!
     
   
     
@@ -255,7 +255,7 @@ class TableViewController: UITableViewController, WCSessionDelegate, MFMailCompo
         let fileName = "Tiradas"
         let DocumentDirURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
         
-        let fileURL = DocumentDirURL.appendingPathComponent(fileName).appendingPathExtension("csv")
+        fileURL = DocumentDirURL.appendingPathComponent(fileName).appendingPathExtension("csv")
         print("FilePath: \(fileURL.path)")
         do {
             // Write to the file
@@ -285,6 +285,14 @@ class TableViewController: UITableViewController, WCSessionDelegate, MFMailCompo
             composeVC.setSubject("Fichero Tiradas")
             composeVC.setMessageBody("Fichero CSV de Tiradas", isHTML: false)
             
+            let filePath = self.fileURL.path
+            
+            if let fileData = NSData(contentsOfFile: filePath) {
+                print("File data loaded.")
+                composeVC.addAttachmentData(fileData as Data, mimeType: "test/csv", fileName: "Tiradas.csv")
+                
+            }
+            /*
             if let filePath = Bundle.main.path(forResource: "Tiradas", ofType: "csv") {
                 print("File path loaded: ",filePath)
                 if let fileData = NSData(contentsOfFile: filePath) {
@@ -292,12 +300,14 @@ class TableViewController: UITableViewController, WCSessionDelegate, MFMailCompo
                     composeVC.addAttachmentData(fileData as Data, mimeType: "test/csv", fileName: "Tiradas")
                     
                 }
-                
+             }
+            */
+            
                 // Present the view controller modally.
                 self.present(composeVC, animated: true, completion: nil)
             }
         }
-    }
+    
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true)
