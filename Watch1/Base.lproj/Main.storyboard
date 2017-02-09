@@ -105,7 +105,13 @@
                             <outlet property="delegate" destination="Ep3-50-LuI" id="DIl-hS-5M7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Robin Hood" id="UDI-yY-frY"/>
+                    <navigationItem key="navigationItem" title="Robin Hood" id="UDI-yY-frY">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="qa3-81-8Ux">
+                            <connections>
+                                <action selector="exportCSV:" destination="Ep3-50-LuI" id="Sad-Uh-qSH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zwn-GI-OOg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

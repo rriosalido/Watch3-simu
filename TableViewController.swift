@@ -136,6 +136,41 @@ class TableViewController: UITableViewController, WCSessionDelegate {
         return true
     }
     */
+    
+    
+    @IBAction func exportCSV(_ sender: UIBarButtonItem) {
+        
+        var csv = ""
+        for i in 1..<results.count {
+            print (i)
+            let reg = results[i]
+            let fecha = decodeDate(reg.fecha)
+            csv.append(fecha + ",")
+            csv.append(reg.dist + ",")
+            csv.append(String(reg.tiros)+",")
+            csv.append(String(reg.total)+",")
+            csv.append(String(reg.media)+",")
+            csv.append(String(reg.std)+",")
+            csv.append(reg.puntos+"\n")
+            print (csv)
+            //
+        }
+        print (csv)
+        
+        // Save data to file
+        let fileName = "Tiradas"
+        let DocumentDirURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        
+        let fileURL = DocumentDirURL.appendingPathComponent(fileName).appendingPathExtension("csv")
+        print("FilePath: \(fileURL.path)")
+        do {
+            // Write to the file
+            try csv.write(to: fileURL, atomically: true, encoding: String.Encoding.utf8)
+        } catch let error as NSError {
+            print("Failed writing to URL: \(fileURL), Error: " + error.localizedDescription)
+        }
+    }
+    
 
     // MARK: - Navigation
     

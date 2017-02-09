@@ -8,33 +8,6 @@
 
 import Foundation
 
-/*
-class Shot {
-    
-    private let value = [0,1,2,3,4,5,6,7,8,9,10,10]
-    var fecha : Date
-    var dist : String
-    var table : [Int]
-    var tiros : Int
-    var total : Int
-    var media : Double
-    var std : Double
-    private var sfx2 : Int
-    
-    init (fecha: Date, dist: String, table:[Int]) {
-        self.fecha = fecha
-        self.dist = dist
-        self.table = table
-        tiros = table.reduce(0, _:+)
-        total = zip(table,value).map{$0 * $1}.reduce(0, _:+)
-        media = Double(total)/Double(tiros)
-        sfx2 = zip(table,value).map{$0 * $1 * $1}.reduce(0, _:+)
-        std = sqrt(Double(sfx2) / Double(tiros) - (media * media))
-        media = Double(round(10*media)/10)
-        std = Double(round(10*std)/10)
-    }
-}
-*/
 
 func listaRonda (_ array : [String]) -> String {
     var lista = String()
