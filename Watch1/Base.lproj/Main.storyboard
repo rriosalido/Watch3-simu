@@ -221,11 +221,11 @@
             </objects>
             <point key="canvasLocation" x="10" y="180"/>
         </scene>
-        <!--Table-->
+        <!--Navigation Controller-->
         <scene sceneID="hOR-KD-f8Y">
             <objects>
                 <navigationController id="Dki-3o-Slb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Table" id="ppQ-NC-rEk"/>
+                    <tabBarItem key="tabBarItem" systemItem="history" id="ppQ-NC-rEk"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Ib-Ak-V1z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -500,7 +500,7 @@
                             <constraint firstItem="7Cw-vO-b3s" firstAttribute="top" secondItem="S3e-ul-ijc" secondAttribute="bottom" id="hCz-PF-5hb"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Shot" id="VfN-7u-fAI"/>
+                    <tabBarItem key="tabBarItem" title="Shot" image="Shot" id="VfN-7u-fAI"/>
                     <navigationItem key="navigationItem" id="zeN-h0-qqC"/>
                     <connections>
                         <outlet property="button1" destination="D4K-zf-Xd2" id="zht-vw-fOT"/>
@@ -562,7 +562,7 @@
                             <constraint firstItem="cuv-ow-sLK" firstAttribute="leading" secondItem="WHn-Tl-kfa" secondAttribute="leadingMargin" id="tR5-sC-Ui6"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="d6R-NM-TOd"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="Home" id="d6R-NM-TOd"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7bh-Mb-Lhi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -570,6 +570,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Home" width="15" height="15"/>
         <image name="Image" width="427" height="640"/>
+        <image name="Shot" width="15" height="15"/>
     </resources>
 </document>
