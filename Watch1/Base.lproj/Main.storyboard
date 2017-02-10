@@ -530,7 +530,7 @@
         <!--Home-->
         <scene sceneID="5ir-il-AVS">
             <objects>
-                <viewController id="VJ3-VV-LTT" sceneMemberID="viewController">
+                <viewController id="VJ3-VV-LTT" customClass="InitialViewController" customModule="Watch1" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="D2B-67-Qqm"/>
                         <viewControllerLayoutGuide type="bottom" id="5YQ-PK-l11"/>
