@@ -28,7 +28,7 @@ func decodeDate(_ date: Date) -> (String){
     //let hour = String(Calendar.current.component(.hour, from: date))
     let day = String(Calendar.current.component(.day, from: date))
     var fecha = ""
-    fecha = fecha + day + "-" + month + "-" + year  // + " " + hour
+    fecha = fecha + day + "/" + month + "/" + year  // + " " + hour
     return fecha
 }
 

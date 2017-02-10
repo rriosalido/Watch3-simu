@@ -119,9 +119,14 @@ class AnotateIphoneViewController: UIViewController {
             let myshot = statS(stabla)
             
             
-            let title = "Resultados"
-            let message = "Tiros: " + String (myshot.tiros) + " Media: "+String(myshot.media) + " Desv.T: " + String(myshot.std)
+            //let title = "Resultados"
+            //let message = "Tiros: " + String (myshot.tiros) + " Media: "+String(myshot.media) + " Desv.T: " + String(myshot.std)
             
+            var title = "Resultados:\n"
+            title = title + "Tiros: " + String (myshot.tiros)
+            title = title + "  Total: " + String(myshot.total) + "\n"
+            title = title + " Media: "+String(myshot.media) + "  Desv.T: " + String(myshot.std)
+            let message = ""
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
             
             let actionYes = UIAlertAction(title: "Save", style: .default) { (action:UIAlertAction) in

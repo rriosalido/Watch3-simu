@@ -236,7 +236,7 @@ class TableViewController: UITableViewController, WCSessionDelegate, MFMailCompo
         print ("Export")
         // Preparacion para exportar a CSV
         
-        var csv = ""
+        var csv = "Fecha,Dist,Tiros,Total,Media,Std,M,P1,P2,P3,P4,P5,P6,P7,P8,P9,P10,X\n"
         for i in 1..<self.results.count {
             print (i)
             let reg = results[i]
