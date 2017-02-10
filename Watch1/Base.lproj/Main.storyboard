@@ -251,6 +251,7 @@
                         <segue destination="VJ3-VV-LTT" kind="relationship" relationship="viewControllers" id="8vF-LG-NKV"/>
                         <segue destination="Dki-3o-Slb" kind="relationship" relationship="viewControllers" id="Zfd-Nk-rxd"/>
                         <segue destination="ujq-TO-ltQ" kind="relationship" relationship="viewControllers" id="mdf-3Q-xEr"/>
+                        <segue destination="Y68-y5-8PM" kind="relationship" relationship="viewControllers" id="sXp-iz-Hyw"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6hU-RT-gAP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -568,10 +569,73 @@
             </objects>
             <point key="canvasLocation" x="-1687" y="-748"/>
         </scene>
+        <!--Settings-->
+        <scene sceneID="VeL-0m-Y9s">
+            <objects>
+                <viewController id="Y68-y5-8PM" customClass="SettingsViewController" customModule="Watch1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="21U-4g-CpM"/>
+                        <viewControllerLayoutGuide type="bottom" id="SKb-u8-YA9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hHr-iu-zkt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cxs-zw-S8a">
+                                <rect key="frame" x="16" y="226" width="343" height="216"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y68-y5-8PM" id="XL8-sG-FOe"/>
+                                </connections>
+                            </pickerView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="bee-pV-IZu">
+                                <rect key="frame" x="16" y="202" width="343" height="24"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distancia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gf-9e-kEU">
+                                        <rect key="frame" x="0.0" y="0.0" width="91.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" red="1" green="0.73603635489999997" blue="0.1231509098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rondas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uzz-GK-Ds8">
+                                        <rect key="frame" x="125.5" y="0.0" width="92" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" red="1" green="0.73603635489999997" blue="0.1231509098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flechas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feB-TK-g1j">
+                                        <rect key="frame" x="251.5" y="0.0" width="91.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" red="1" green="0.73603635489999997" blue="0.1231509098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="cxs-zw-S8a" secondAttribute="trailing" id="Lee-LB-NLH"/>
+                            <constraint firstItem="cxs-zw-S8a" firstAttribute="centerY" secondItem="hHr-iu-zkt" secondAttribute="centerY" id="P9l-YT-kBw"/>
+                            <constraint firstItem="bee-pV-IZu" firstAttribute="leading" secondItem="hHr-iu-zkt" secondAttribute="leadingMargin" id="W1m-PY-71A"/>
+                            <constraint firstItem="cxs-zw-S8a" firstAttribute="leading" secondItem="hHr-iu-zkt" secondAttribute="leadingMargin" id="XhB-Tn-dnz"/>
+                            <constraint firstItem="cxs-zw-S8a" firstAttribute="top" secondItem="bee-pV-IZu" secondAttribute="bottom" id="aQ1-SK-CuH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bee-pV-IZu" secondAttribute="trailing" id="qTt-2R-LG7"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="Settings" selectedImage="Settings" id="uBM-wB-Em1"/>
+                    <connections>
+                        <outlet property="picker" destination="cxs-zw-S8a" id="41l-lu-f7t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PFh-Gm-sd8" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1687" y="1805"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Home" width="15" height="15"/>
         <image name="Image" width="427" height="640"/>
+        <image name="Settings" width="15" height="15"/>
         <image name="Shot" width="15" height="15"/>
     </resources>
 </document>

@@ -27,6 +27,7 @@
 		8C388D631E2E936300498790 /* AnotateInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C388D621E2E936300498790 /* AnotateInterfaceController.swift */; };
 		8C388D651E2E936300498790 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C388D641E2E936300498790 /* ExtensionDelegate.swift */; };
 		8C388D671E2E936300498790 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C388D661E2E936300498790 /* Assets.xcassets */; };
+		8C4BA5481E4DE051007F152E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4BA5471E4DE051007F152E /* SettingsViewController.swift */; };
 		8C90BA851E3A894900469AA1 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C90BA841E3A894900469AA1 /* TableViewController.swift */; };
 		8C90BA871E3A913300469AA1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C90BA861E3A913300469AA1 /* DetailViewController.swift */; };
 		8CA012541E33E10100F46441 /* ConfigInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA012531E33E10100F46441 /* ConfigInterfaceController.swift */; };
@@ -110,6 +111,7 @@
 		8C388D641E2E936300498790 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		8C388D661E2E936300498790 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C388D681E2E936300498790 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C4BA5471E4DE051007F152E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8C90BA841E3A894900469AA1 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = ../TableViewController.swift; sourceTree = "<group>"; };
 		8C90BA861E3A913300469AA1 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8CA012531E33E10100F46441 /* ConfigInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfigInterfaceController.swift; path = "../Watch1 WatchKit App/ConfigInterfaceController.swift"; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				8C90BA841E3A894900469AA1 /* TableViewController.swift */,
 				8C90BA861E3A913300469AA1 /* DetailViewController.swift */,
 				8C388D431E2E936300498790 /* Main.storyboard */,
+				8C4BA5471E4DE051007F152E /* SettingsViewController.swift */,
 				8C0AB6BF1E4C960A00267BA8 /* AnotateIphoneViewController.swift */,
 				8CCF02201E425A4800C26194 /* ModelDB.swift */,
 				8C388D461E2E936300498790 /* Assets.xcassets */,
@@ -412,6 +415,7 @@
 				8C0AB6C01E4C960A00267BA8 /* AnotateIphoneViewController.swift in Sources */,
 				8C90BA871E3A913300469AA1 /* DetailViewController.swift in Sources */,
 				8C388D401E2E936300498790 /* AppDelegate.swift in Sources */,
+				8C4BA5481E4DE051007F152E /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
