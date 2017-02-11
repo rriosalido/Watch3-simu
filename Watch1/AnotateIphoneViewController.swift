@@ -13,15 +13,18 @@ class AnotateIphoneViewController: UIViewController {
     
     //MARK: Variables
    
-    var maxRondas = 3
-    var maxFlechas = 6
+    var maxRondas = 0
+    var maxFlechas = 0
+    var dist = ""
+    
     var numShots = 0
     var ronda = 1
     var puntosTirada = [String]()
     var tiradas = [[String]()]
     var labelScore = " "
-    var distancia = 15
-    var config = [Int]()
+    
+    let userDefaults = UserDefaults.standard
+    
     
     // MARK: Outlets
     
@@ -49,34 +52,14 @@ class AnotateIphoneViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        /*
-        nextButton.isEnabled = false
-        nextButton.alpha = 0.5
-        endButton.isEnabled = false
-        endButton.alpha = 0.5
-        numRonda.text = "Ronda Nº 1 de " + String(maxRondas)
-        parcialScore.text = labelScore
-        clearLast.isEnabled = false
-        clearLast.alpha = 0.5
-        */
-        /*
-         config = context as! [Int]
-         self.maxRondas = config[0]
-         self.maxFlechas = config[1]
-         self.distancia = config[2]
-         */
-        tiradas[0]=[String(distancia)+"m"]
-        
         initAnotate()
-        
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         
-        
-        
+          if numShots == 0, ronda == 1 {
+            initAnotate()
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -299,15 +282,20 @@ class AnotateIphoneViewController: UIViewController {
     
     func initAnotate () {
         
-        maxRondas = 3
-        maxFlechas = 6
+        
+        dist = userDefaults.string(forKey: "Dist")!
+        let urondas = userDefaults.string(forKey: "Rondas")!
+        let uflechas = userDefaults.string(forKey: "Flechas")!
+        
+        maxRondas = Int(urondas)!
+        maxFlechas = Int(uflechas)!
+       
+        
         numShots = 0
         ronda = 1
         puntosTirada = [String]()
         tiradas = [[String]()]
         labelScore = " "
-        distancia = 15
-        config = [Int]()
         
         nextButton.isEnabled = false
         nextButton.alpha = 0.5
@@ -321,13 +309,7 @@ class AnotateIphoneViewController: UIViewController {
         
         enableButtons()
         
-        /*
-         config = context as! [Int]
-         self.maxRondas = config[0]
-         self.maxFlechas = config[1]
-         self.distancia = config[2]
-         */
-        tiradas[0]=[String(distancia)+"m"]
+        tiradas[0]=[dist]
     }
     /*
      // MARK: - Navigation
