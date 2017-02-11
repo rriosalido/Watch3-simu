@@ -117,9 +117,6 @@
 		8C90BA841E3A894900469AA1 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = ../TableViewController.swift; sourceTree = "<group>"; };
 		8C90BA861E3A913300469AA1 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8CA012531E33E10100F46441 /* ConfigInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfigInterfaceController.swift; path = "../Watch1 WatchKit App/ConfigInterfaceController.swift"; sourceTree = "<group>"; };
-		8CC0C9121E4F1A2F0064C9C9 /* Watch1 WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Watch1 WatchKit Extension.entitlements"; sourceTree = "<group>"; };
-		8CC0C9131E4F1A3C0064C9C9 /* Watch1 WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Watch1 WatchKit App.entitlements"; sourceTree = "<group>"; };
-		8CC0C9141E4F1A440064C9C9 /* Watch1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Watch1.entitlements; sourceTree = "<group>"; };
 		8CCF02201E425A4800C26194 /* ModelDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelDB.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -175,7 +172,6 @@
 		8C388D3E1E2E936300498790 /* Watch1 */ = {
 			isa = PBXGroup;
 			children = (
-				8CC0C9141E4F1A440064C9C9 /* Watch1.entitlements */,
 				8C388D3F1E2E936300498790 /* AppDelegate.swift */,
 				8C90BA841E3A894900469AA1 /* TableViewController.swift */,
 				8C90BA861E3A913300469AA1 /* DetailViewController.swift */,
@@ -194,7 +190,6 @@
 		8C388D521E2E936300498790 /* Watch1 WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
-				8CC0C9131E4F1A3C0064C9C9 /* Watch1 WatchKit App.entitlements */,
 				8C388D531E2E936300498790 /* Interface.storyboard */,
 				8C388D561E2E936300498790 /* Assets.xcassets */,
 				8C388D581E2E936300498790 /* Info.plist */,
@@ -205,7 +200,6 @@
 		8C388D611E2E936300498790 /* Watch1 WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				8CC0C9121E4F1A2F0064C9C9 /* Watch1 WatchKit Extension.entitlements */,
 				8C388D621E2E936300498790 /* AnotateInterfaceController.swift */,
 				8C0219E71E31537F002254CC /* ResultsController.swift */,
 				8CA012531E33E10100F46441 /* ConfigInterfaceController.swift */,
@@ -304,7 +298,7 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -315,7 +309,7 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -325,7 +319,7 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -596,7 +590,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_ENTITLEMENTS = "Watch1 WatchKit Extension/Watch1 WatchKit Extension.entitlements";
 				DEVELOPMENT_TEAM = T77H76YT2X;
 				INFOPLIST_FILE = "Watch1 WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -614,7 +607,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_ENTITLEMENTS = "Watch1 WatchKit Extension/Watch1 WatchKit Extension.entitlements";
 				DEVELOPMENT_TEAM = T77H76YT2X;
 				INFOPLIST_FILE = "Watch1 WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -634,7 +626,6 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "Watch1 WatchKit App/Watch1 WatchKit App.entitlements";
 				DEVELOPMENT_TEAM = T77H76YT2X;
 				IBSC_MODULE = Watch1_WatchKit_Extension;
 				INFOPLIST_FILE = "Watch1 WatchKit App/Info.plist";
@@ -656,7 +647,6 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "Watch1 WatchKit App/Watch1 WatchKit App.entitlements";
 				DEVELOPMENT_TEAM = T77H76YT2X;
 				IBSC_MODULE = Watch1_WatchKit_Extension;
 				INFOPLIST_FILE = "Watch1 WatchKit App/Info.plist";
@@ -676,7 +666,6 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Watch1/Watch1.entitlements;
 				DEVELOPMENT_TEAM = T77H76YT2X;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -696,7 +685,6 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Watch1/Watch1.entitlements;
 				DEVELOPMENT_TEAM = T77H76YT2X;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

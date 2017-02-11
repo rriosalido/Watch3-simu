@@ -13,9 +13,9 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     var dist = ""
     var rondas = ""
     var flechas = ""
-    //let userDefaults = UserDefaults.standard
+    let userDefaults = UserDefaults.standard
     
-    let userDefaults = UserDefaults(suiteName: "group.Watch1.settings")
+    //let userDefaults = UserDefaults(suiteName: "group.Watch1.settings")
     
     var pickerData: [[String]] = [[String]]()
     
@@ -36,10 +36,10 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         
         
         
-        dist = (userDefaults?.string(forKey: "Dist")!)!
+        dist = (userDefaults.string(forKey: "Dist")!)
         let index = pickerData[0].index(of: dist)
-        rondas = (userDefaults?.string(forKey: "Rondas")!)!
-        flechas = (userDefaults?.string(forKey: "Flechas")!)!
+        rondas = (userDefaults.string(forKey: "Rondas")!)
+        flechas = (userDefaults.string(forKey: "Flechas")!)
         
         print (dist,rondas,flechas)
         
@@ -78,13 +78,13 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         switch component {
         case 0:
             dist = pickerData [0] [row]
-            userDefaults?.set(dist, forKey: "Dist")
+            userDefaults.set(dist, forKey: "Dist")
         case 1 :
             rondas = pickerData[1] [row]
-            userDefaults?.set(rondas, forKey: "Rondas")
+            userDefaults.set(rondas, forKey: "Rondas")
         case 2 :
             flechas = pickerData[2] [row]
-            userDefaults?.set(flechas, forKey: "Flechas")
+            userDefaults.set(flechas, forKey: "Flechas")
         default: break
         }
         
