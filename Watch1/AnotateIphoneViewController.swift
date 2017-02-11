@@ -31,7 +31,7 @@ class AnotateIphoneViewController: UIViewController {
     
     @IBOutlet weak var numRonda: UILabel!
     @IBOutlet weak var parcialScore: UILabel!
-    
+    @IBOutlet weak var numFlecha: UILabel!
     
     @IBOutlet weak var buttonX: UIButton!
     @IBOutlet weak var button10: UIButton!
@@ -302,6 +302,7 @@ class AnotateIphoneViewController: UIViewController {
         endButton.isEnabled = false
         endButton.alpha = 0.5
         numRonda.text = "Ronda Nº 1 de " + String(maxRondas)
+        numFlecha.text = "Flechas: " + uflechas
         labelScore = ""
         parcialScore.text = labelScore
         clearLast.isEnabled = false
