@@ -23,8 +23,8 @@ class AnotateIphoneViewController: UIViewController {
     var tiradas = [[String]()]
     var labelScore = " "
     
-    let userDefaults = UserDefaults.standard
-    
+    //let userDefaults = UserDefaults.standard
+    let userDefaults = UserDefaults(suiteName: "group.Watch1.settings")
     
     // MARK: Outlets
     
@@ -283,12 +283,12 @@ class AnotateIphoneViewController: UIViewController {
     func initAnotate () {
         
         
-        dist = userDefaults.string(forKey: "Dist")!
-        let urondas = userDefaults.string(forKey: "Rondas")!
-        let uflechas = userDefaults.string(forKey: "Flechas")!
+        dist = (userDefaults?.string(forKey: "Dist")!)!
+        let urondas = userDefaults?.string(forKey: "Rondas")!
+        let uflechas = userDefaults?.string(forKey: "Flechas")!
         
-        maxRondas = Int(urondas)!
-        maxFlechas = Int(uflechas)!
+        maxRondas = Int(urondas!)!
+        maxFlechas = Int(uflechas!)!
        
         
         numShots = 0
@@ -302,7 +302,7 @@ class AnotateIphoneViewController: UIViewController {
         endButton.isEnabled = false
         endButton.alpha = 0.5
         numRonda.text = "Ronda Nº 1 de " + String(maxRondas)
-        numFlecha.text = "Flechas: " + uflechas
+        numFlecha.text = "Flechas: " + uflechas!
         labelScore = ""
         parcialScore.text = labelScore
         clearLast.isEnabled = false
