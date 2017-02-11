@@ -194,7 +194,7 @@
                                                 </group>
                                                 <group width="1" alignment="left" spacing="4" id="D7L-do-9w7">
                                                     <items>
-                                                        <label alignment="left" text="          Ronda Nº:" id="etO-F1-VI6">
+                                                        <label alignment="left" text="      Ronda Nº:" id="etO-F1-VI6">
                                                             <fontDescription key="font" type="system" pointSize="15"/>
                                                         </label>
                                                         <label alignment="left" text="5" id="6pR-GT-JXS">

@@ -52,17 +52,19 @@ class AnotateInterfaceController: WKInterfaceController {
 
         super.awake(withContext: context)
         
-        next.setEnabled(false)
-        endButton.setEnabled(false)
-        numRonda.setText("1")
-        parcialScore.setText(labelScore)
-        clearLast.setEnabled(false)
-       
         config = context as! [Int]
         self.maxRondas = config[0]
         self.maxFlechas = config[1]
         self.distancia = config[2]
         tiradas[0]=[String(distancia)+"m"]
+        
+        next.setEnabled(false)
+        endButton.setEnabled(false)
+        numRonda.setText("1" + " de " + String(self.maxRondas))
+        parcialScore.setText(labelScore)
+        clearLast.setEnabled(false)
+       
+        
         
         }
     
@@ -100,7 +102,7 @@ class AnotateInterfaceController: WKInterfaceController {
             WKInterfaceController.reloadRootControllers(withNames: ["ResultsController"], contexts: [tiradas])
             
         } else {
-            numRonda.setText(String(ronda))
+            numRonda.setText(String(ronda) + " de " + String(self.maxRondas))
             next.setEnabled(false)
             endButton.setEnabled(false)
             enableButtons()
