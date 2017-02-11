@@ -30,7 +30,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         self.picker.dataSource = self
         self.picker.delegate = self
         
-        pickerData  = [["18m","30m", "50m", "70m"],
+        pickerData  = [["18m","30m","25m", "50m", "70m"],
                        ["1","2","3","4","5","6","7","8","9","10"],
                        ["1","2","3","4","5","6","7","8","9","10"] ]
         
