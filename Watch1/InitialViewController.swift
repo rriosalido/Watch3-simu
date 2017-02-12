@@ -73,6 +73,16 @@ class InitialViewController: UIViewController, WCSessionDelegate {
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
         
         
+        let key = message["Key"] as? String
+        
+        if key == "Settings" {
+            
+            replyHandler(["Message":"Recibido Peticion Settings"])
+        
+        } else {
+            
+        
+        
         let date = message["Fecha"] as? Date
         let dist = message["Dist"] as? String
         let stable = message["Tabla"] as? String
@@ -114,6 +124,7 @@ class InitialViewController: UIViewController, WCSessionDelegate {
         */
         // Send a reply
         replyHandler(["Message":"Recibido"])
+        }
     }
     
     public func sessionDidDeactivate(_ session: WCSession) {
