@@ -249,7 +249,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-251" y="-12"/>
+            <point key="canvasLocation" x="-364" y="-14"/>
         </scene>
         <!--ResultsController-->
         <scene sceneID="Hyy-61-Cnd">
@@ -346,7 +346,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-11" y="-14"/>
+            <point key="canvasLocation" x="-135" y="-14"/>
         </scene>
     </scenes>
 </document>
