@@ -12,7 +12,6 @@ import MessageUI
 
 class TableViewCell : UITableViewCell{
     
-    
     @IBOutlet weak var fechaLabel: UILabel!
     @IBOutlet weak var distLabel: UILabel!
     @IBOutlet weak var tirosLabel: UILabel!
@@ -24,31 +23,25 @@ class TableViewCell : UITableViewCell{
     
 class TableViewController: UITableViewController, MFMailComposeViewControllerDelegate {
 
-
+    
+    //MARK: Variables
     
     let realm = try! Realm()
     let results = try! Realm().objects(ShotDB.self).sorted(byKeyPath: "fecha", ascending: false)
     
     var fileURL : URL!
     
-  
+    //MARK: Initialize
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Use the edit button item provided by the table view controller.
-        
-        //self.navigationItem.leftBarButtonItem = self.editButtonItem
         navigationItem.leftBarButtonItem = editButtonItem
-        
-        
+   
         let realmFile = Realm.Configuration.defaultConfiguration.fileURL!
         
         print (realmFile)
 
-        
-        //print ("Realm file", myRealm.path)
-        
         tableView.reloadData()
         
         // Uncomment the following line to preserve selection between presentations
@@ -96,10 +89,7 @@ class TableViewController: UITableViewController, MFMailComposeViewControllerDel
         return cell
     }
     
-    
-    
-    
-    
+      
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
@@ -164,7 +154,7 @@ class TableViewController: UITableViewController, MFMailComposeViewControllerDel
         }
     }
 
-    
+    //MARK: Actions
     
     func export () {
         print ("Export")
@@ -226,16 +216,6 @@ class TableViewController: UITableViewController, MFMailComposeViewControllerDel
                 composeVC.addAttachmentData(fileData as Data, mimeType: "test/csv", fileName: "Tiradas.csv")
                 
             }
-            /*
-            if let filePath = Bundle.main.path(forResource: "Tiradas", ofType: "csv") {
-                print("File path loaded: ",filePath)
-                if let fileData = NSData(contentsOfFile: filePath) {
-                    print("File data loaded.")
-                    composeVC.addAttachmentData(fileData as Data, mimeType: "test/csv", fileName: "Tiradas")
-                    
-                }
-             }
-            */
             
                 // Present the view controller modally.
                 self.present(composeVC, animated: true, completion: nil)

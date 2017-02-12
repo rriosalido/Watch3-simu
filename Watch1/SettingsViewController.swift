@@ -10,31 +10,30 @@ import UIKit
 
 class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
+    
+    //MARK: Variables
+    
     var dist = ""
     var rondas = ""
     var flechas = ""
     let userDefaults = UserDefaults.standard
-    
-    //let userDefaults = UserDefaults(suiteName: "group.Watch1.settings")
-    
+  
     var pickerData: [[String]] = [[String]]()
     
+    //MARK: Outlets
     
     @IBOutlet weak var picker: UIPickerView!
     
+    //MARK: Initialize
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view, typically from a nib.
-        
         self.picker.dataSource = self
         self.picker.delegate = self
         
         pickerData  = [["18m","25m","30m", "50m", "70m"],
                        ["1","2","3","4","5","6","7","8","9","10"],
                        ["1","2","3","4","5","6","7","8","9","10"] ]
-        
-        
         
         dist = (userDefaults.string(forKey: "Dist")!)
         let index = pickerData[0].index(of: dist)
@@ -69,7 +68,8 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         return pickerData[component][row]
     }
     
-    // Catpure the picker view selection
+    //MARK: Catpure the picker view selection
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         // This method is triggered whenever the user makes a change to the picker selection.
         // The parameter named row and component represents what was selected.

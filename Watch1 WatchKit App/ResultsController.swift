@@ -75,16 +75,6 @@ class ResultsController: WKInterfaceController, WCSessionDelegate {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
-    
-        /*
-        if WCSession.isSupported() {
-            session = WCSession.default()
-            session.delegate = self
-            session.activate()
-            
-            print ("Activada Sesion")
-        }
-        */
     }
 
     override func didDeactivate() {
@@ -111,9 +101,6 @@ class ResultsController: WKInterfaceController, WCSessionDelegate {
         
         transmitData()
         
-        // en tabla[Int] tenemos la tabla de frecuencias
-        // añadir fecha y distancia
-        // pasar al iphone
     }
     
     //MARK: WCSession delegate protocol
@@ -133,7 +120,7 @@ class ResultsController: WKInterfaceController, WCSessionDelegate {
             
             let value = replyMessage["Message"] as? String
             
-            print (value)
+            //print (value)
             
             if value == "Recibido"{
                 self.savedData = true

@@ -202,6 +202,7 @@
 		8C388D611E2E936300498790 /* Watch1 WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				8C7B815F1E5082AA005DB504 /* InitialInterfaceController.swift */,
 				8C388D621E2E936300498790 /* AnotateInterfaceController.swift */,
 				8C0219E71E31537F002254CC /* ResultsController.swift */,
 				8CA012531E33E10100F46441 /* ConfigInterfaceController.swift */,
@@ -209,7 +210,6 @@
 				8C388D641E2E936300498790 /* ExtensionDelegate.swift */,
 				8C388D661E2E936300498790 /* Assets.xcassets */,
 				8C388D681E2E936300498790 /* Info.plist */,
-				8C7B815F1E5082AA005DB504 /* InitialInterfaceController.swift */,
 			);
 			path = "Watch1 WatchKit Extension";
 			sourceTree = "<group>";

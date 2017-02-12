@@ -13,21 +13,22 @@ import Charts
 
 class DetailViewController: UIViewController {
 
+    //MARK: Variables
     
     var myshot = ShotDB()
+    
+    
+    //MARK: Outlets
     
     @IBOutlet weak var fechaLabel: UILabel!
     @IBOutlet weak var distLabel: UILabel!
     @IBOutlet weak var tirosLabel: UILabel!
-    
-    
     @IBOutlet weak var totalLabel: UILabel!
-    
     @IBOutlet weak var mediaLabel: UILabel!
-    
-    
     @IBOutlet weak var destLabel: UILabel!
     @IBOutlet weak var barChartView: BarChartView!
+    
+    //MARK: Initialize
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +55,9 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    //MARK: Chart 
+    
     func setChart(values: [Int], media: Double) {
         barChartView.noDataText = "You need to provide data for the chart."
         
@@ -64,8 +68,7 @@ class DetailViewController: UIViewController {
         
         for i in 0..<values.count {
 
-             freq = (Double(values[i]) / Double(num))*100.0
-            
+            freq = (Double(values[i]) / Double(num))*100.0
             //let dataEntry = BarChartDataEntry(x: Double(i), y: Double(values[i]))  // freq abosultas
             let dataEntry = BarChartDataEntry(x: Double(i), y: freq)
             dataEntries.append(dataEntry)

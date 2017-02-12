@@ -13,18 +13,24 @@ import WatchConnectivity
 
 class InitialInterfaceController: WKInterfaceController, WCSessionDelegate {
 
+    
+    //MARK: Variables
+    
     var session: WCSession!
     var distancia = ""
     var maxRondas = ""
     var maxFlechas = ""
-    
     var dataToSend = [String: Any]()
+    
+    //MARK: Outlets
     
     @IBOutlet var rondasLabel: WKInterfaceLabel!
     
     @IBOutlet var distLabel: WKInterfaceLabel!
     
     @IBOutlet var flechasLabel: WKInterfaceLabel!
+    
+    //MARK: Initiallize
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -59,6 +65,8 @@ class InitialInterfaceController: WKInterfaceController, WCSessionDelegate {
     }
     
     
+    //MARK: Actions
+    
     @IBAction func AskForSettings() {
         
         print ("Datos Pedidos")
@@ -73,23 +81,13 @@ class InitialInterfaceController: WKInterfaceController, WCSessionDelegate {
             self.maxRondas = (arrayString?[1])!
             self.maxFlechas = (arrayString?[2])!
             
-            print (value)
+            //print (value)
             print (self.distancia,self.maxRondas, self.maxFlechas)
             
             self.distLabel.setText("Distancia: " + self.distancia)
             self.rondasLabel.setText("Nº de Rondas: " + self.maxRondas)
             self.flechasLabel.setText("Nº de Flechas: " + self.maxFlechas)
             
-            /*
-            if value == "Recibido"{
-                self.savedData = true
-                self.showPopupOK ("IPhone", "Datos Guardados")
-                self.saveButton.setEnabled(false)
-                
-            } else {
-                self.showPopupOK ("Error", "Intentelo de nuevo")
-            }
-            */
         }) { (error) in
             // Catch any error Handler  REVISAR
             print("error: \(error.localizedDescription)")
