@@ -60,6 +60,7 @@
                         <outlet property="distLabel" destination="fUH-Bc-wpY" id="nOo-Av-3hj"/>
                         <outlet property="flechasLabel" destination="Eh0-9U-5hU" id="O2h-oq-REm"/>
                         <outlet property="rondasLabel" destination="gyu-2X-m3c" id="JeH-mn-pBK"/>
+                        <outlet property="startButton" destination="6DD-LJ-gTj" id="RZD-FJ-Smz"/>
                     </connections>
                 </controller>
             </objects>

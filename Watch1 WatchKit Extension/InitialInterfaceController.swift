@@ -30,6 +30,8 @@ class InitialInterfaceController: WKInterfaceController, WCSessionDelegate {
     
     @IBOutlet var flechasLabel: WKInterfaceLabel!
     
+    @IBOutlet var startButton: WKInterfaceButton!
+    
     //MARK: Initiallize
     
     override func awake(withContext context: Any?) {
@@ -44,6 +46,7 @@ class InitialInterfaceController: WKInterfaceController, WCSessionDelegate {
             
             print ("Activada Sesion")
             
+            startButton.setEnabled(false)
     
         }
     }
@@ -87,6 +90,8 @@ class InitialInterfaceController: WKInterfaceController, WCSessionDelegate {
             self.distLabel.setText("Distancia: " + self.distancia)
             self.rondasLabel.setText("Nº de Rondas: " + self.maxRondas)
             self.flechasLabel.setText("Nº de Flechas: " + self.maxFlechas)
+            
+            self.startButton.setEnabled(true)
             
         }) { (error) in
             // Catch any error Handler  REVISAR
