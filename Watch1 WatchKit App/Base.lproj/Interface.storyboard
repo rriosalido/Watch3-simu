@@ -9,71 +9,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
     </dependencies>
     <scenes>
-        <!--ConfigureController-->
-        <scene sceneID="cqV-ku-bZy">
-            <objects>
-                <controller identifier="ConfigureController" id="taQ-CK-9e8" customClass="ConfigInterfaceController" customModule="Watch1_WatchKit_Extension">
-                    <items>
-                        <label width="1" alignment="left" text="Robin Hood" textAlignment="center" id="MfN-jO-Pyg">
-                            <color key="textColor" red="1" green="0.77455929879999996" blue="0.1496734314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <fontDescription key="font" type="italicSystem" weight="bold" pointSize="16"/>
-                        </label>
-                        <separator alignment="left" id="Hbd-DU-7e2"/>
-                        <group width="1" height="116" alignment="left" spacing="9" id="00w-20-ACp">
-                            <items>
-                                <group width="47" alignment="left" layout="vertical" id="c18-hT-R36">
-                                    <items>
-                                        <label alignment="left" text="Rounds" minimumScaleFactor="0.59999999999999998" id="IUL-Fm-D6A">
-                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </label>
-                                        <picker width="41" height="84" alignment="left" focusStyle="stack" id="IAN-AL-bAz">
-                                            <connections>
-                                                <action selector="setRondas:" destination="taQ-CK-9e8" id="vxt-td-5hY"/>
-                                            </connections>
-                                        </picker>
-                                    </items>
-                                </group>
-                                <group width="44" alignment="left" layout="vertical" id="VUr-Yp-fKz">
-                                    <items>
-                                        <label alignment="left" text="Arrows" minimumScaleFactor="0.59999999999999998" id="g42-Yt-5PD">
-                                            <color key="textColor" red="1" green="0.092997964419999996" blue="0.078115335790000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </label>
-                                        <picker width="41" height="85" alignment="left" focusStyle="stack" id="toY-ue-SPo">
-                                            <connections>
-                                                <action selector="setFlechas:" destination="taQ-CK-9e8" id="0D5-X9-bSh"/>
-                                            </connections>
-                                        </picker>
-                                    </items>
-                                </group>
-                                <group width="47" height="109" alignment="left" layout="vertical" id="9qK-EI-Cmo">
-                                    <items>
-                                        <label alignment="left" text="Dist.(m)" textAlignment="center" minimumScaleFactor="0.59999999999999998" id="byR-8x-gQq"/>
-                                        <picker width="41" height="85" alignment="left" focusStyle="stack" id="ORw-KJ-WWu">
-                                            <connections>
-                                                <action selector="setDist:" destination="taQ-CK-9e8" id="v1M-Le-zZ9"/>
-                                            </connections>
-                                        </picker>
-                                    </items>
-                                </group>
-                            </items>
-                        </group>
-                        <button width="1" height="19" alignment="left" title="Start" id="lIe-db-DRD">
-                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <color key="backgroundColor" red="1" green="0.77455929879999996" blue="0.1496734314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="startAnotate" destination="taQ-CK-9e8" id="rkz-RV-2VE"/>
-                            </connections>
-                        </button>
-                    </items>
-                    <connections>
-                        <outlet property="distPicker" destination="ORw-KJ-WWu" id="8bd-OL-cPM"/>
-                        <outlet property="flechasPicker" destination="toY-ue-SPo" id="V8X-ye-YeB"/>
-                        <outlet property="rondasPicker" destination="IAN-AL-bAz" id="tV9-gu-X4F"/>
-                    </connections>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="-513" y="-13"/>
-        </scene>
         <!--InitialInterfaceController-->
         <scene sceneID="6Zp-dH-qsO">
             <objects>
@@ -128,7 +63,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-320.82051282051282" y="424.12820512820514"/>
+            <point key="canvasLocation" x="-588" y="-13"/>
         </scene>
         <!--AnotateController-->
         <scene sceneID="aou-V4-d1y">
