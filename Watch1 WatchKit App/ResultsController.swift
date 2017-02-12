@@ -95,7 +95,7 @@ class ResultsController: WKInterfaceController, WCSessionDelegate {
     //MARK: Actions
     
     @IBAction func again() {
-        WKInterfaceController.reloadRootControllers(withNames: ["ConfigureController"], contexts: nil)
+        WKInterfaceController.reloadRootControllers(withNames: ["InitialInterfaceController"], contexts: nil)
     }
     
     @IBAction func exitButtom() {

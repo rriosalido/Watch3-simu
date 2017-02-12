@@ -74,29 +74,58 @@
             </objects>
             <point key="canvasLocation" x="-513" y="-13"/>
         </scene>
-        <!--Initial Interface Controller-->
+        <!--InitialInterfaceController-->
         <scene sceneID="6Zp-dH-qsO">
             <objects>
-                <controller id="HW4-5k-Nej" customClass="InitialInterfaceController" customModule="Watch1_WatchKit_Extension">
+                <controller identifier="InitialInterfaceController" id="HW4-5k-Nej" customClass="InitialInterfaceController" customModule="Watch1_WatchKit_Extension">
                     <items>
-                        <button width="1" alignment="left" title="Settings" id="QD9-Is-8RR">
-                            <color key="backgroundColor" red="1" green="0.73603635489999997" blue="0.1231509098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <fontDescription key="font" type="boldSystem" pointSize="24"/>
-                            <connections>
-                                <action selector="AskForSettings" destination="HW4-5k-Nej" id="qFc-KT-MUQ"/>
-                            </connections>
-                        </button>
-                        <button width="1" alignment="left" title="Start" id="6DD-LJ-gTj">
-                            <color key="backgroundColor" red="1" green="0.73603635489999997" blue="0.1231509098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <fontDescription key="font" type="boldSystem" pointSize="22"/>
-                            <connections>
-                                <action selector="startTirada" destination="HW4-5k-Nej" id="zx3-PT-XiY"/>
-                            </connections>
-                        </button>
+                        <label width="1" alignment="left" text="Robin Hood" textAlignment="center" id="t0M-mc-iJb">
+                            <color key="textColor" red="1" green="0.77455929879999996" blue="0.1496734314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="font" type="italicSystem" weight="bold" pointSize="16"/>
+                        </label>
+                        <separator alignment="left" id="U93-hM-gkH"/>
+                        <group width="1" alignment="left" layout="vertical" spacing="11" id="Ng1-bK-ckq">
+                            <items>
+                                <label alignment="left" text="Distancia:" id="fUH-Bc-wpY"/>
+                                <label alignment="left" text="Nº de Rondas" id="gyu-2X-m3c"/>
+                                <label alignment="left" text="Nº de Flechas" id="Eh0-9U-5hU"/>
+                            </items>
+                        </group>
+                        <group width="1" height="35" alignment="left" spacing="1" id="Urk-Ew-sui">
+                            <items>
+                                <button alignment="left" title="Set  " id="QD9-Is-8RR" userLabel="Set">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" red="1" green="0.73603635489999997" blue="0.1231509098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="system" weight="semibold" pointSize="18"/>
+                                    <connections>
+                                        <action selector="AskForSettings" destination="HW4-5k-Nej" id="qFc-KT-MUQ"/>
+                                    </connections>
+                                </button>
+                                <button width="60" height="48" alignment="left" title="Start" id="6DD-LJ-gTj">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="1" green="0.73603635489999997" blue="0.1231509098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="system" weight="semibold" pointSize="17"/>
+                                    <connections>
+                                        <action selector="startTirada" destination="HW4-5k-Nej" id="zx3-PT-XiY"/>
+                                    </connections>
+                                </button>
+                                <button height="57" alignment="left" title="Exit" id="m6P-7J-R2I">
+                                    <color key="titleColor" red="1" green="0.092997964419999996" blue="0.078115335790000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="1" green="0.73603635489999997" blue="0.1231509098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="system" weight="semibold" pointSize="18"/>
+                                </button>
+                            </items>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </group>
                     </items>
+                    <connections>
+                        <outlet property="distLabel" destination="fUH-Bc-wpY" id="nOo-Av-3hj"/>
+                        <outlet property="flechasLabel" destination="Eh0-9U-5hU" id="O2h-oq-REm"/>
+                        <outlet property="rondasLabel" destination="gyu-2X-m3c" id="JeH-mn-pBK"/>
+                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-516" y="257"/>
+            <point key="canvasLocation" x="-320.82051282051282" y="424.12820512820514"/>
         </scene>
         <!--AnotateController-->
         <scene sceneID="aou-V4-d1y">

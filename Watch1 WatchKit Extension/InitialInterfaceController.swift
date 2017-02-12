@@ -18,7 +18,13 @@ class InitialInterfaceController: WKInterfaceController, WCSessionDelegate {
     var maxRondas = ""
     var maxFlechas = ""
     
-     var dataToSend = [String: Any]()
+    var dataToSend = [String: Any]()
+    
+    @IBOutlet var rondasLabel: WKInterfaceLabel!
+    
+    @IBOutlet var distLabel: WKInterfaceLabel!
+    
+    @IBOutlet var flechasLabel: WKInterfaceLabel!
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -67,6 +73,10 @@ class InitialInterfaceController: WKInterfaceController, WCSessionDelegate {
             
             print (value)
             print (self.distancia,self.maxRondas, self.maxFlechas)
+            
+            self.distLabel.setText("Distancia: " + self.distancia)
+            self.rondasLabel.setText("Nº de Rondas: " + self.maxRondas)
+            self.flechasLabel.setText("Nº de Flechas: " + self.maxFlechas)
             
             /*
             if value == "Recibido"{
