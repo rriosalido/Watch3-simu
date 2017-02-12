@@ -15,6 +15,11 @@ class InitialViewController: UIViewController, WCSessionDelegate {
     
     var session : WCSession!
     
+    
+    var dist = ""
+    var flechas = ""
+    var rondas = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,11 +42,11 @@ class InitialViewController: UIViewController, WCSessionDelegate {
   
         }
         
-        let dist = userDefaults.string(forKey: "Dist")
-        let flechas = userDefaults.string(forKey: "Flechas")
-        let rondas = userDefaults.string(forKey: "Rondas")
+        dist = userDefaults.string(forKey: "Dist")!
+        flechas = userDefaults.string(forKey: "Flechas")!
+        rondas = userDefaults.string(forKey: "Rondas")!
         
-        print(dist!, rondas!, flechas!)
+        print(dist, rondas, flechas)
         
         if WCSession.isSupported() {
             session = WCSession.default()
@@ -72,12 +77,26 @@ class InitialViewController: UIViewController, WCSessionDelegate {
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
         
+    
         
         let key = message["Key"] as? String
         
         if key == "Settings" {
             
-            replyHandler(["Message":"Recibido Peticion Settings"])
+            //dataToSend["Rondas"] = rondas
+            //dataToSend["Flechas"] = flechas
+            //dataToSend["Dist"] = dist
+            
+            
+            //var dataToSend = [dist,rondas,flechas]
+            let userDefaults = UserDefaults.standard
+            dist = userDefaults.string(forKey: "Dist")!
+            flechas = userDefaults.string(forKey: "Flechas")!
+            rondas = userDefaults.string(forKey: "Rondas")!
+            
+            let dataToSend = dist+","+rondas+","+flechas
+            
+            replyHandler(["Message": dataToSend])
         
         } else {
             

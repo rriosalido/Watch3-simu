@@ -86,6 +86,13 @@
                                 <action selector="AskForSettings" destination="HW4-5k-Nej" id="qFc-KT-MUQ"/>
                             </connections>
                         </button>
+                        <button width="1" alignment="left" title="Start" id="6DD-LJ-gTj">
+                            <color key="backgroundColor" red="1" green="0.73603635489999997" blue="0.1231509098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="font" type="boldSystem" pointSize="22"/>
+                            <connections>
+                                <action selector="startTirada" destination="HW4-5k-Nej" id="zx3-PT-XiY"/>
+                            </connections>
+                        </button>
                     </items>
                 </controller>
             </objects>

@@ -14,6 +14,9 @@ import WatchConnectivity
 class InitialInterfaceController: WKInterfaceController, WCSessionDelegate {
 
     var session: WCSession!
+    var distancia = ""
+    var maxRondas = ""
+    var maxFlechas = ""
     
      var dataToSend = [String: Any]()
     
@@ -57,7 +60,13 @@ class InitialInterfaceController: WKInterfaceController, WCSessionDelegate {
             
             let value = replyMessage["Message"] as? String
             
+            let arrayString = value?.components(separatedBy: ",")
+            self.distancia = (arrayString?[0])!
+            self.maxRondas = (arrayString?[1])!
+            self.maxFlechas = (arrayString?[2])!
+            
             print (value)
+            print (self.distancia,self.maxRondas, self.maxFlechas)
             
             /*
             if value == "Recibido"{
@@ -78,5 +87,20 @@ class InitialInterfaceController: WKInterfaceController, WCSessionDelegate {
         
     }
     
+    
+    @IBAction func startTirada() {
+        
+        let rondas = Int(maxRondas)
+        let flechas = Int(maxFlechas)
+        
+        let index = distancia.index(distancia.startIndex, offsetBy: 2)
+        let dist = Int(distancia.substring(to: index))
+    
+        let config : Any = [rondas,flechas,dist]
+        WKInterfaceController.reloadRootControllers(withNames: ["AnotateController"], contexts: [config])
+        
+        
+    }
+  
     
 }
