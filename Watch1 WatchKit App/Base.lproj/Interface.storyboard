@@ -87,8 +87,8 @@
                         <group width="1" alignment="left" layout="vertical" spacing="11" id="Ng1-bK-ckq">
                             <items>
                                 <label alignment="left" text="Distancia:" id="fUH-Bc-wpY"/>
-                                <label alignment="left" text="Nº de Rondas" id="gyu-2X-m3c"/>
-                                <label alignment="left" text="Nº de Flechas" id="Eh0-9U-5hU"/>
+                                <label alignment="left" text="Nº de Rondas: " id="gyu-2X-m3c"/>
+                                <label alignment="left" text="Nº de Flechas: " id="Eh0-9U-5hU"/>
                             </items>
                         </group>
                         <group width="1" height="35" alignment="left" spacing="1" id="Urk-Ew-sui">
@@ -113,6 +113,9 @@
                                     <color key="titleColor" red="1" green="0.092997964419999996" blue="0.078115335790000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="backgroundColor" red="1" green="0.73603635489999997" blue="0.1231509098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="font" type="system" weight="semibold" pointSize="18"/>
+                                    <connections>
+                                        <action selector="exitButton" destination="HW4-5k-Nej" id="W1J-jn-wBz"/>
+                                    </connections>
                                 </button>
                             </items>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -37,6 +37,8 @@ class InitialInterfaceController: WKInterfaceController, WCSessionDelegate {
             session.activate()
             
             print ("Activada Sesion")
+            
+    
         }
     }
 
@@ -112,5 +114,8 @@ class InitialInterfaceController: WKInterfaceController, WCSessionDelegate {
         
     }
   
+    @IBAction func exitButton() {
+        exit(0)
+    }
     
 }
