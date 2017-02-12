@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import WatchConnectivity
 import RealmSwift
 import MessageUI
 
@@ -23,9 +22,9 @@ class TableViewCell : UITableViewCell{
     
 }
     
-class TableViewController: UITableViewController, WCSessionDelegate, MFMailComposeViewControllerDelegate {
+class TableViewController: UITableViewController, MFMailComposeViewControllerDelegate {
 
-    var session : WCSession!
+
     
     let realm = try! Realm()
     let results = try! Realm().objects(ShotDB.self).sorted(byKeyPath: "fecha", ascending: false)
@@ -42,11 +41,6 @@ class TableViewController: UITableViewController, WCSessionDelegate, MFMailCompo
         //self.navigationItem.leftBarButtonItem = self.editButtonItem
         navigationItem.leftBarButtonItem = editButtonItem
         
-        if WCSession.isSupported() {
-            session = WCSession.default()
-            session.delegate = self
-            session.activate()
-        }
         
         let realmFile = Realm.Configuration.defaultConfiguration.fileURL!
         
@@ -170,66 +164,6 @@ class TableViewController: UITableViewController, WCSessionDelegate, MFMailCompo
         }
     }
 
-
-    
-    //MARK: WCSession Delegate
-    
-    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
-        
-        
-        let date = message["Fecha"] as? Date
-        let dist = message["Dist"] as? String
-        let stable = message["Tabla"] as? String
-        
-        let mystatS = statS(stable!)
-        
-        let mydata = ShotDB()
-        mydata.fecha = date!
-        mydata.dist = dist!
-        mydata.total = mystatS.total
-        mydata.media = mystatS.media
-        mydata.tiros = mystatS.tiros
-        mydata.std = mystatS.std
-        mydata.puntos = stable!
-        
-        let realm = try! Realm()
-        
-        try! realm.write {
-            realm.add(mydata)
-            print ("Añadido Registro")
-        }
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
-        
-          DispatchQueue.main.async { () -> Void in
-            self.tableView.reloadData()
-        }
-        // GCD - Present on the screen
-        /*
-         DispatchQueue.main.async { () -> Void in
-         self.mediaLabel.text = "Media: " + String(media)
-         self.tirosLabel.text = "Tiros: " + String(tiros)
-         self.destLabel.text = "Sigma: " + String(dest)
-         self.fechaLabel.text = "Fecha: " + fecha
-         self.distLabel.text = "Distancia: " + dist!
-         self.totalLabel.text = "Total: " + String(total)
-         }
-         */
-        
-        // Send a reply
-        replyHandler(["Message":"Recibido"])
-    }
-    
-    public func sessionDidDeactivate(_ session: WCSession) {
-        //..
-    }
-    
-    public func sessionDidBecomeInactive(_ session: WCSession) {
-        //..
-    }
-    
-    public func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        //..
-    }
     
     
     func export () {

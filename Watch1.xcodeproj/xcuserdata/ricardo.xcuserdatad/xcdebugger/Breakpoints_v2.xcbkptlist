@@ -12,53 +12,5 @@
             typeName = "All">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TableViewController.swift"
-            timestampString = "508409359.99063"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "290"
-            endingLineNumber = "290"
-            landmarkName = "sendMail()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Watch1.TableViewController.sendMail () -&gt; ()"
-                  moduleName = "Watch1"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Datos/Users/ricardo/iOS_development/WatchOS/Watch3/Watch3-master-simu/TableViewController.swift"
-                  timestampString = "508512186.058718"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "290"
-                  endingLineNumber = "290"
-                  offsetFromSymbolStart = "1077">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Watch1.TableViewController.sendMail () -&gt; ()"
-                  moduleName = "Watch1"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Datos/Users/ricardo/iOS_development/WatchOS/Watch3/Watch3-master-simu/TableViewController.swift"
-                  timestampString = "508512186.060376"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "290"
-                  endingLineNumber = "290"
-                  offsetFromSymbolStart = "1170">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

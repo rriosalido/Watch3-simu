@@ -37,6 +37,7 @@ class ResultsController: WKInterfaceController, WCSessionDelegate {
     
     override func awake(withContext context: Any? ) {
         super.awake(withContext: context)
+        
         let tiradas = context as! [[String]]
        
         //Calculamos los estadísticos y los visualizamos
@@ -61,18 +62,29 @@ class ResultsController: WKInterfaceController, WCSessionDelegate {
         dataToSend["Tabla"] = stabla
         
         print (dataToSend)
-       
+        
+        if WCSession.isSupported() {
+            session = WCSession.default()
+            session.delegate = self
+            session.activate()
+            
+            print ("Activada Sesion")
+        }
     }
 
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
     
+        /*
         if WCSession.isSupported() {
             session = WCSession.default()
             session.delegate = self
             session.activate()
+            
+            print ("Activada Sesion")
         }
+        */
     }
 
     override func didDeactivate() {
@@ -115,9 +127,14 @@ class ResultsController: WKInterfaceController, WCSessionDelegate {
     
     func transmitData () {
         
+        print ("Datos transmitidos")
+        
         session.sendMessage(dataToSend, replyHandler: { (replyMessage) in
             
             let value = replyMessage["Message"] as? String
+            
+            print (value)
+            
             if value == "Recibido"{
                 self.savedData = true
                 self.showPopupOK ("IPhone", "Datos Guardados")
