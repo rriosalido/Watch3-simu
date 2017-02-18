@@ -74,23 +74,14 @@ class DetailViewController: UIViewController {
             dataEntries.append(dataEntry)
         }
         
-
+        // BarChart
         let chartDataSet = BarChartDataSet(values: dataEntries, label: "Tiros")
- 
         let chartData = BarChartData(dataSet: chartDataSet)
-        
         barChartView.data = chartData
-        
         barChartView.chartDescription?.text = nil
-        
         //chartDataSet.colors = ChartColorTemplates.colorful()
-        
-        
-        chartDataSet.colors = [.green, .white, .white, .black,.black,.blue,.blue,.red,.red,.yellow,.yellow,.yellow]
-        
-        
-        
-        
+        chartDataSet.colors = [.green, .white, .lightGray,.darkGray,.black,.cyan,.blue,.magenta,.red,.yellow,.orange,.brown]
+        //chartDataSet.colors = [.green, .white, .white, .black,.black,.blue,.blue,.red,.red,.yellow,.yellow,.yellow]
         let labels = ["M","1","2","3","4","5","6","7","8","9","10","X"]
         barChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: labels)
         barChartView.xAxis.granularityEnabled = true
@@ -98,15 +89,9 @@ class DetailViewController: UIViewController {
         barChartView.xAxis.labelPosition = .bottom
         barChartView.leftAxis.axisMinimum = 0.0
         barChartView.rightAxis.axisMinimum = 0.0
-        
-        
-        //barChartView.backgroundColor = UIColor(red: 189/255, green: 195/255, blue: 199/255, alpha: 1)
         barChartView.animate(xAxisDuration: 1.0, yAxisDuration: 1.0)
-        
         let ll = ChartLimitLine(limit: media, label: "Media")
-        
         barChartView.rightAxis.addLimitLine(ll)
-        
         barChartView.legend.enabled = false
         
         //barChartView.scaleYEnabled = false

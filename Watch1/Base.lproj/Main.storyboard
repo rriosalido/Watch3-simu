@@ -190,7 +190,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.8554928979327765" green="1" blue="0.96623873382388681" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="NeN-CX-gk3" firstAttribute="top" secondItem="AXh-Cy-q09" secondAttribute="topMargin" id="jIO-7E-VKc"/>
                                     <constraint firstItem="NeN-CX-gk3" firstAttribute="centerX" secondItem="AXh-Cy-q09" secondAttribute="centerX" id="oem-Pg-lEr"/>
