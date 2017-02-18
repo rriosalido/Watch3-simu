@@ -28,6 +28,11 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var destLabel: UILabel!
     @IBOutlet weak var barChartView: BarChartView!
     
+    @IBOutlet weak var pieChartView: PieChartView!
+    
+    
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
     //MARK: Initialize
     
     override func viewDidLoad() {
@@ -46,6 +51,9 @@ class DetailViewController: UIViewController {
         let arrayString = string.components(separatedBy: "-")
         let table = arrayString.map{Int($0)!}
         
+        barChartView.isHidden = false
+        pieChartView.isHidden = true
+        
         setChart(values: table, media: myshot.media)
         
     }
@@ -59,9 +67,10 @@ class DetailViewController: UIViewController {
     //MARK: Chart 
     
     func setChart(values: [Int], media: Double) {
-        barChartView.noDataText = "You need to provide data for the chart."
+    
         
         var dataEntries: [BarChartDataEntry] = []
+        var pieEntries: [ChartDataEntry] = []
         
         var freq : Double                   // freq %
         let num = values.reduce(0, _:+)
@@ -71,7 +80,9 @@ class DetailViewController: UIViewController {
             freq = (Double(values[i]) / Double(num))*100.0
             //let dataEntry = BarChartDataEntry(x: Double(i), y: Double(values[i]))  // freq abosultas
             let dataEntry = BarChartDataEntry(x: Double(i), y: freq)
+            let pieEntry = ChartDataEntry(x: Double(i), y: freq)
             dataEntries.append(dataEntry)
+            pieEntries.append(pieEntry)
         }
         
         // BarChart
@@ -102,6 +113,63 @@ class DetailViewController: UIViewController {
         //barChartView.rightAxis.enabled = false
         //barChartView.leftAxis.enabled = false
         //barChartView.xAxis.drawGridLinesEnabled = false   
+        
+        //Pie
+        let pieChartDataSet = PieChartDataSet(values: pieEntries, label: "Frecuencia %")
+        
+        pieChartDataSet.xValuePosition = PieChartDataSet.ValuePosition(rawValue: 1)!
+        pieChartDataSet.yValuePosition = PieChartDataSet.ValuePosition(rawValue: 1)!
+        pieChartDataSet.valueLineColor = .white
+        pieChartDataSet.valueLineWidth = 1.5
+        pieChartDataSet.colors = [.green, .white, .lightGray,.darkGray,.black,.cyan,.blue,.magenta,.red,.yellow,.orange,.brown]
+        
+        
+        // -------- Esto no me funciona
+        pieChartDataSet.entryLabelColor = NSUIColor.blue
+        pieChartDataSet.entryLabelFont = NSUIFont.boldSystemFont(ofSize: 20)
+        // --------
+        
+        let pieChartData = PieChartData(dataSet: pieChartDataSet)
+        
+        
+        pieChartView.chartDescription?.text = ""
+        
+        pieChartView.animate(xAxisDuration: 1.0, yAxisDuration: 1.0)
+        pieChartView.legend.enabled = true
+        pieChartView.legend.textColor = .black
+        pieChartView.legend.font = NSUIFont.boldSystemFont(ofSize: 15)
+        pieChartView.legend.formSize = 12.0
+        
+        
+        pieChartView.holeColor = UIColor.clear
+        
+        pieChartView.centerText = "Media= "+String(myshot.media)+"\n"+"Desv.T.= "+String(myshot.std)
+        // --------Esto Tampoco funciona
+        pieChartView.drawEntryLabelsEnabled = true
+        pieChartView.entryLabelColor = NSUIColor.black
+        pieChartView.entryLabelFont = NSUIFont.boldSystemFont(ofSize: 5)
+        // --------
+        
+        
+        pieChartView.data = pieChartData
+    }
+    
+    
+    @IBAction func chartSelect(_ sender: UISegmentedControl) {
+        switch segmentedControl.selectedSegmentIndex
+        {
+        case 0:
+            //textLabel.text = "First selected";
+            barChartView.isHidden = false
+            pieChartView.isHidden = true
+        case 1:
+            //textLabel.text = "Second Segment selected";
+            barChartView.isHidden = true
+            pieChartView.isHidden = false
+        default:
+            break;
+        }
+        
     }
     
     /*

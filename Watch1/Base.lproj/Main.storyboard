@@ -180,8 +180,13 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cfv-gg-YAS" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="16" y="131" width="343" height="443"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AXh-Cy-q09" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="16" y="131" width="343" height="467"/>
+                                <rect key="frame" x="16" y="131" width="343" height="443"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frecuencia %" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NeN-CX-gk3">
                                         <rect key="frame" x="120.5" y="8" width="101.5" height="20.5"/>
@@ -190,16 +195,27 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.8554928979327765" green="1" blue="0.96623873382388681" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.89886173797291868" green="0.9555390477180481" blue="0.87042164293761337" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="NeN-CX-gk3" firstAttribute="top" secondItem="AXh-Cy-q09" secondAttribute="topMargin" id="jIO-7E-VKc"/>
                                     <constraint firstItem="NeN-CX-gk3" firstAttribute="centerX" secondItem="AXh-Cy-q09" secondAttribute="centerX" id="oem-Pg-lEr"/>
                                 </constraints>
                             </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xB7-3t-9Nt">
+                                <rect key="frame" x="127" y="582" width="121" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Bar"/>
+                                    <segment title="Pie"/>
+                                </segments>
+                                <connections>
+                                    <action selector="chartSelect:" destination="9XU-0F-ZIs" eventType="valueChanged" id="xO7-wR-23m"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="eUK-9g-GZg" firstAttribute="top" secondItem="AXh-Cy-q09" secondAttribute="bottom" constant="20" id="1uz-hl-fed"/>
+                            <constraint firstItem="eUK-9g-GZg" firstAttribute="top" secondItem="AXh-Cy-q09" secondAttribute="bottom" constant="44" id="1uz-hl-fed"/>
                             <constraint firstItem="YgK-aC-KGT" firstAttribute="top" secondItem="R7X-6b-r16" secondAttribute="bottom" id="5gN-wc-phN"/>
                             <constraint firstItem="YgK-aC-KGT" firstAttribute="leading" secondItem="B2Q-7o-wNY" secondAttribute="leadingMargin" constant="9" id="Ozg-HS-QRE"/>
                             <constraint firstItem="AXh-Cy-q09" firstAttribute="leading" secondItem="B2Q-7o-wNY" secondAttribute="leadingMargin" id="PUW-hG-KzU"/>
@@ -213,13 +229,15 @@
                         <outlet property="distLabel" destination="F2s-9f-yjW" id="PqM-Ef-1We"/>
                         <outlet property="fechaLabel" destination="egh-Dd-nCH" id="Mey-SA-RD9"/>
                         <outlet property="mediaLabel" destination="Nin-7G-5mH" id="nTN-KI-kTq"/>
+                        <outlet property="pieChartView" destination="cfv-gg-YAS" id="x4p-uM-Mft"/>
+                        <outlet property="segmentedControl" destination="xB7-3t-9Nt" id="7ED-YG-fXh"/>
                         <outlet property="tirosLabel" destination="olJ-U3-9F7" id="Rgd-ra-ue5"/>
                         <outlet property="totalLabel" destination="GJ2-o5-bBZ" id="Xwv-0i-fW9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eg4-qq-OLR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10" y="180"/>
+            <point key="canvasLocation" x="8.8000000000000007" y="179.46026986506749"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hOR-KD-f8Y">
