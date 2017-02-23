@@ -95,3 +95,19 @@ func tablaFreq (_ array:[[String]]) -> [Int]{
     }
     return tabla
 }
+
+
+struct dataG {
+    
+    var dia : String
+    var media : Double
+    var std : Double
+    var tiros : Int
+    
+    init(dia: String, media:Double, std:Double,tiros:Int){
+        self.dia = dia
+        self.media = media
+        self.std = std
+        self.tiros = tiros
+    }
+}

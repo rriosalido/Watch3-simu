@@ -77,9 +77,8 @@ class TableViewController: UITableViewController, MFMailComposeViewControllerDel
         // Configure the cell...
 
         let item = results[indexPath.row]
-        let fecha = decodeDate(Date())
-        
-        cell.fechaLabel?.text = fecha
+
+        cell.fechaLabel?.text = decodeDate(item.fecha)
         cell.distLabel?.text = "Dist.: " + item.dist
         cell.tirosLabel?.text = "Tiros: " + String(item.tiros)
         cell.totalLabel?.text = "Total: " + String(item.total)
