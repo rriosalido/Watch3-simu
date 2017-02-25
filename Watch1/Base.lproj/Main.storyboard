@@ -129,8 +129,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cfv-gg-YAS" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="16" y="131" width="343" height="443"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AXh-Cy-q09" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="16" y="131" width="343" height="443"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frecuencia %" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NeN-CX-gk3">
+                                        <rect key="frame" x="121.5" y="8" width="101.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.89886173797291868" green="0.9555390477180481" blue="0.87042164293761337" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="NeN-CX-gk3" firstAttribute="top" secondItem="AXh-Cy-q09" secondAttribute="topMargin" id="jIO-7E-VKc"/>
+                                    <constraint firstItem="NeN-CX-gk3" firstAttribute="centerX" secondItem="AXh-Cy-q09" secondAttribute="centerX" id="oem-Pg-lEr"/>
+                                </constraints>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xB7-3t-9Nt">
+                                <rect key="frame" x="127" y="582" width="121" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="121" id="bL1-la-9fq"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Bar"/>
+                                    <segment title="Pie"/>
+                                </segments>
+                                <connections>
+                                    <action selector="chartSelect:" destination="9XU-0F-ZIs" eventType="valueChanged" id="xO7-wR-23m"/>
+                                </connections>
+                            </segmentedControl>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="YgK-aC-KGT">
-                                <rect key="frame" x="25" y="64" width="169" height="45"/>
+                                <rect key="frame" x="16" y="72" width="169" height="45"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="j7I-7r-rdQ">
                                         <rect key="frame" x="0.0" y="0.0" width="169" height="20.5"/>
@@ -180,48 +213,15 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cfv-gg-YAS" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="16" y="131" width="343" height="443"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AXh-Cy-q09" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="16" y="131" width="343" height="443"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frecuencia %" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NeN-CX-gk3">
-                                        <rect key="frame" x="121.5" y="8" width="101.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.89886173797291868" green="0.9555390477180481" blue="0.87042164293761337" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="NeN-CX-gk3" firstAttribute="top" secondItem="AXh-Cy-q09" secondAttribute="topMargin" id="jIO-7E-VKc"/>
-                                    <constraint firstItem="NeN-CX-gk3" firstAttribute="centerX" secondItem="AXh-Cy-q09" secondAttribute="centerX" id="oem-Pg-lEr"/>
-                                </constraints>
-                            </view>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xB7-3t-9Nt">
-                                <rect key="frame" x="127" y="582" width="121" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="121" id="bL1-la-9fq"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="Bar"/>
-                                    <segment title="Pie"/>
-                                </segments>
-                                <connections>
-                                    <action selector="chartSelect:" destination="9XU-0F-ZIs" eventType="valueChanged" id="xO7-wR-23m"/>
-                                </connections>
-                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="AXh-Cy-q09" firstAttribute="top" secondItem="cfv-gg-YAS" secondAttribute="top" id="3YX-S2-eE0"/>
-                            <constraint firstItem="YgK-aC-KGT" firstAttribute="top" secondItem="R7X-6b-r16" secondAttribute="bottom" id="5gN-wc-phN"/>
+                            <constraint firstItem="YgK-aC-KGT" firstAttribute="top" secondItem="R7X-6b-r16" secondAttribute="bottom" constant="8" id="5gN-wc-phN"/>
                             <constraint firstItem="xB7-3t-9Nt" firstAttribute="centerX" secondItem="cfv-gg-YAS" secondAttribute="centerX" id="EvQ-8k-8SU"/>
                             <constraint firstItem="xB7-3t-9Nt" firstAttribute="top" secondItem="cfv-gg-YAS" secondAttribute="bottom" constant="8" symbolic="YES" id="GVh-vi-3YG"/>
-                            <constraint firstItem="AXh-Cy-q09" firstAttribute="top" secondItem="YgK-aC-KGT" secondAttribute="bottom" constant="22" id="NlI-WL-g65"/>
-                            <constraint firstItem="YgK-aC-KGT" firstAttribute="leading" secondItem="B2Q-7o-wNY" secondAttribute="leadingMargin" constant="9" id="Ozg-HS-QRE"/>
+                            <constraint firstItem="AXh-Cy-q09" firstAttribute="top" secondItem="YgK-aC-KGT" secondAttribute="bottom" constant="14" id="NlI-WL-g65"/>
+                            <constraint firstItem="YgK-aC-KGT" firstAttribute="leading" secondItem="B2Q-7o-wNY" secondAttribute="leadingMargin" id="Ozg-HS-QRE"/>
                             <constraint firstItem="AXh-Cy-q09" firstAttribute="leading" secondItem="B2Q-7o-wNY" secondAttribute="leadingMargin" id="PUW-hG-KzU"/>
                             <constraint firstItem="AXh-Cy-q09" firstAttribute="leading" secondItem="cfv-gg-YAS" secondAttribute="leading" id="VQn-TG-4iv"/>
                             <constraint firstItem="AXh-Cy-q09" firstAttribute="trailing" secondItem="B2Q-7o-wNY" secondAttribute="trailingMargin" id="a1i-gQ-IyU"/>
@@ -699,13 +699,13 @@
                                 </connections>
                             </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hLy-Wp-q3o" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="16" y="56" width="343" height="535"/>
+                                <rect key="frame" x="16" y="56" width="343" height="562"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="5GH-mo-mKu" firstAttribute="top" secondItem="hLy-Wp-q3o" secondAttribute="bottom" constant="27" id="KtY-TO-Rif"/>
+                            <constraint firstItem="5GH-mo-mKu" firstAttribute="top" secondItem="hLy-Wp-q3o" secondAttribute="bottom" id="KtY-TO-Rif" userLabel="Bottom Layout Guide.top = Line Chart View.bottom + 0"/>
                             <constraint firstItem="hLy-Wp-q3o" firstAttribute="centerX" secondItem="VX0-c7-zm7" secondAttribute="centerX" id="O7F-vb-3jO"/>
                             <constraint firstAttribute="leadingMargin" secondItem="hLy-Wp-q3o" secondAttribute="leading" id="bxT-jc-q5t"/>
                             <constraint firstItem="VX0-c7-zm7" firstAttribute="top" secondItem="g6I-CD-Nmm" secondAttribute="bottom" id="cWz-so-1tX"/>
@@ -721,7 +721,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Tx-wa-YmB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3295" y="1804"/>
+            <point key="canvasLocation" x="-3295.5022488755626" y="1804"/>
         </scene>
     </scenes>
     <resources>

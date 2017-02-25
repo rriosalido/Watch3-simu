@@ -47,6 +47,8 @@ class InitialInterfaceController: WKInterfaceController, WCSessionDelegate {
             print ("Activada Sesion")
             
             startButton.setEnabled(false)
+            
+            AskForSettings()   // Falla si parentapp is not running, pero parece que va mas deprisa
     
         }
     }
