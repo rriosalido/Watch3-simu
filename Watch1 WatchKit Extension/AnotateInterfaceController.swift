@@ -112,7 +112,7 @@ class AnotateInterfaceController: WKInterfaceController {
                 numRonda.setText(String(ronda) + " de " + String(self.maxRondas))
             }
             next.setEnabled(false)
-            endButton.setEnabled(false)
+            endButton.setEnabled(true)
             enableButtons()
             numShots = 0
             puntosTirada = []
@@ -124,25 +124,18 @@ class AnotateInterfaceController: WKInterfaceController {
     func numberPressed (_ value : String){
       
         numShots += 1
+        if numShots >= 1 {
+            self.endButton.setEnabled(true)
+        }
+        
+        
         puntosTirada.append(value)
         labelScore = listaRonda(puntosTirada)
         print (labelScore)
         parcialScore.setText(labelScore)
         clearLast.setEnabled(true)
         if numShots == maxFlechas {
-            disableButtons()
-            tiradas.append(puntosTirada)
-            print (tiradas)
-            let suma = sumaRonda(puntosTirada)
-            labelScore.remove(at: labelScore.index (before: labelScore.endIndex))
-            labelScore = labelScore + "=" + String(suma)
-            parcialScore.setText(labelScore)
-            if ronda == maxRondas {
-                next.setEnabled(false)
-            } else {
-                next.setEnabled(true)
-            }
-             endButton.setEnabled(true)
+            finFlechas()
         }
         
     }
@@ -163,7 +156,10 @@ class AnotateInterfaceController: WKInterfaceController {
         }
         parcialScore.setText(labelScore)
         enableButtons()
-        endButton.setEnabled(false)
+        if numShots == 0 {
+            endButton.setEnabled(false)
+        }
+        
         next.setEnabled(false)
    
     }
@@ -173,6 +169,9 @@ class AnotateInterfaceController: WKInterfaceController {
     @IBAction func endTirada() {
         // no se llega al maximo de tiradas, pero se finaliza
         // pasa directamente a resultados
+        if numShots < maxFlechas {
+            finFlechas()
+        }
         ronda = maxRondas
         nextRonda()
     }
@@ -205,6 +204,22 @@ class AnotateInterfaceController: WKInterfaceController {
         button10.setEnabled(true)
         buttonM.setEnabled(true)
         buttonX.setEnabled(true)
+    }
+    
+    func finFlechas() {
+        disableButtons()
+        tiradas.append(puntosTirada)
+        print (tiradas)
+        let suma = sumaRonda(puntosTirada)
+        labelScore.remove(at: labelScore.index (before: labelScore.endIndex))
+        labelScore = labelScore + "=" + String(suma)
+        parcialScore.setText(labelScore)
+        if ronda == maxRondas {
+            next.setEnabled(false)
+        } else {
+            next.setEnabled(true)
+        }
+        endButton.setEnabled(true)
     }
     
 }

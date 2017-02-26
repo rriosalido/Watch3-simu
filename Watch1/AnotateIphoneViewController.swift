@@ -181,27 +181,8 @@ class AnotateIphoneViewController: UIViewController {
         clearLast.alpha = 1.0
         if numShots == maxFlechas {
             finFlechas()
-            /*
-            disableButtons()
-            tiradas.append(puntosTirada)
-            print (tiradas)
-            let suma = sumaRonda(puntosTirada)
-            labelScore.remove(at: labelScore.index (before: labelScore.endIndex))
-            labelScore = labelScore + "=" + String(suma)
-            parcialScore.text = labelScore
-            if ronda == maxRondas {
-                nextButton.isEnabled = false
-                nextButton.alpha = 0.5
-            } else {
-                nextButton.isEnabled = true
-                nextButton.alpha = 1.0
-            }
-            endButton.isEnabled = true
-            endButton.alpha = 1.0
-            */
         }
-        
-    }
+     }
     
     
     @IBAction func deleteLast() {
