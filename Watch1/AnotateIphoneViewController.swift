@@ -156,7 +156,7 @@ class AnotateIphoneViewController: UIViewController {
             }
             nextButton.isEnabled = false
             nextButton.alpha = 0.5
-            endButton.isEnabled = false
+            endButton.isEnabled = true
             endButton.alpha = 0.5
             enableButtons()
             numShots = 0
@@ -169,6 +169,10 @@ class AnotateIphoneViewController: UIViewController {
     func numberPressed (_ value : String){
         
         numShots += 1
+        if numShots >= 1 {
+            endButton.isEnabled = true
+            endButton.alpha = 1.0
+        }
         puntosTirada.append(value)
         labelScore = listaRonda(puntosTirada)
         print (labelScore)
@@ -176,6 +180,8 @@ class AnotateIphoneViewController: UIViewController {
         clearLast.isEnabled = true
         clearLast.alpha = 1.0
         if numShots == maxFlechas {
+            finFlechas()
+            /*
             disableButtons()
             tiradas.append(puntosTirada)
             print (tiradas)
@@ -192,6 +198,7 @@ class AnotateIphoneViewController: UIViewController {
             }
             endButton.isEnabled = true
             endButton.alpha = 1.0
+            */
         }
         
     }
@@ -213,8 +220,11 @@ class AnotateIphoneViewController: UIViewController {
         }
         parcialScore.text = labelScore
         enableButtons()
-        endButton.isEnabled = false
-        endButton.alpha = 0.5
+        if numShots == 0 {
+            endButton.isEnabled = false
+            endButton.alpha = 0.5
+        }
+        
         nextButton.isEnabled = false
         nextButton.alpha = 0.5
         
@@ -225,6 +235,10 @@ class AnotateIphoneViewController: UIViewController {
     @IBAction func endTirada() {
         // no se llega al maximo de tiradas, pero se finaliza
         // pasa directamente a resultados
+        
+        if numShots < maxFlechas {
+            finFlechas()
+        }
         ronda = maxRondas
         nextRonda()
     }
@@ -324,9 +338,34 @@ class AnotateIphoneViewController: UIViewController {
         
         tiradas[0]=[dist]
     }
+    
+    
+    func finFlechas(){
+        
+        disableButtons()
+        tiradas.append(puntosTirada)
+        print (tiradas)
+        let suma = sumaRonda(puntosTirada)
+        labelScore.remove(at: labelScore.index (before: labelScore.endIndex))
+        labelScore = labelScore + "=" + String(suma)
+        parcialScore.text = labelScore
+        if ronda == maxRondas {
+            nextButton.isEnabled = false
+            nextButton.alpha = 0.5
+        } else {
+            nextButton.isEnabled = true
+            nextButton.alpha = 1.0
+        }
+        endButton.isEnabled = true
+        endButton.alpha = 1.0
+    }
+    
+    
+
+
     /*
      // MARK: - Navigation
-     
+ 
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      // Get the new view controller using segue.destinationViewController.
