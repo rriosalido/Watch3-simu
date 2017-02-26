@@ -32,7 +32,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         self.picker.delegate = self
         
         pickerData  = [["18m","25m","30m", "50m", "70m"],
-                       ["1","2","3","4","5","6","7","8","9","10"],
+                       ["1","2","3","4","5","6","7","8","9","10","Any"],
                        ["1","2","3","4","5","6","7","8","9","10"] ]
         
         dist = (userDefaults.string(forKey: "Dist")!)
@@ -43,7 +43,12 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         print (dist,rondas,flechas)
         
         picker.selectRow(index!, inComponent: 0, animated: true)
-        picker.selectRow(Int(rondas)!-1, inComponent: 1, animated: true)
+        
+        if rondas == "Any" {
+            picker.selectRow(10, inComponent: 1, animated: true)
+        } else {
+            picker.selectRow(Int(rondas)!-1, inComponent: 1, animated: true)
+        }
         picker.selectRow(Int(flechas)!-1, inComponent: 2, animated: true)
         
     }

@@ -107,7 +107,11 @@ class InitialInterfaceController: WKInterfaceController, WCSessionDelegate {
     
     @IBAction func startTirada() {
         
+        if maxRondas == "Any" {
+            maxRondas = "100"
+        }
         let rondas = Int(maxRondas)
+         
         let flechas = Int(maxFlechas)
         
         let index = distancia.index(distancia.startIndex, offsetBy: 2)

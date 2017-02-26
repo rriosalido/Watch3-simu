@@ -317,7 +317,7 @@
                                                 <action selector="saveData" destination="ftf-Y3-QfN" id="LMv-r8-UBz"/>
                                             </connections>
                                         </button>
-                                        <button width="45" height="33" alignment="left" title="Mas" id="dBD-K6-4Cf">
+                                        <button width="45" height="33" alignment="left" title="Next" id="dBD-K6-4Cf">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="backgroundColor" red="1" green="0.77455929879999996" blue="0.1496734314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
@@ -347,7 +347,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-135" y="-14"/>
+            <point key="canvasLocation" x="-126" y="-14"/>
         </scene>
     </scenes>
 </document>

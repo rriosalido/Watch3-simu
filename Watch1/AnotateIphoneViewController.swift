@@ -24,7 +24,7 @@ class AnotateIphoneViewController: UIViewController {
     var labelScore = " "
     
     let userDefaults = UserDefaults.standard
-    //let userDefaults = UserDefaults(suiteName: "group.Watch1.settings")
+
     
     // MARK: Outlets
     
@@ -149,7 +149,11 @@ class AnotateIphoneViewController: UIViewController {
             
             
         } else {
-            numRonda.text = "Ronda Nº " + String(ronda) + " de " + String(maxRondas)
+            if maxRondas == 100 {
+                numRonda.text = "Ronda Nº " + String(ronda)
+            } else {
+                numRonda.text = "Ronda Nº " + String(ronda) + " de " + String(maxRondas)
+            }
             nextButton.isEnabled = false
             nextButton.alpha = 0.5
             endButton.isEnabled = false
@@ -287,7 +291,11 @@ class AnotateIphoneViewController: UIViewController {
         let urondas = userDefaults.string(forKey: "Rondas")!
         let uflechas = userDefaults.string(forKey: "Flechas")!
         
-        maxRondas = Int(urondas)!
+        if urondas == "Any" {
+            maxRondas = 100
+        } else {
+            maxRondas = Int(urondas)!
+        }
         maxFlechas = Int(uflechas)!
        
         
@@ -301,7 +309,11 @@ class AnotateIphoneViewController: UIViewController {
         nextButton.alpha = 0.5
         endButton.isEnabled = false
         endButton.alpha = 0.5
-        numRonda.text = "Ronda Nº 1 de " + String(maxRondas)
+        if maxRondas == 100 {
+            numRonda.text = "Ronda Nº 1"
+        } else {
+            numRonda.text = "Ronda Nº 1 de " + String(maxRondas)
+        }
         numFlecha.text = "Flechas: " + uflechas
         labelScore = ""
         parcialScore.text = labelScore

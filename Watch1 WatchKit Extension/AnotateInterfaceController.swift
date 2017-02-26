@@ -60,7 +60,11 @@ class AnotateInterfaceController: WKInterfaceController {
         
         next.setEnabled(false)
         endButton.setEnabled(false)
-        numRonda.setText("1" + " de " + String(self.maxRondas))
+        if maxRondas == 100 {
+            numRonda.setText("1")
+        } else {
+            numRonda.setText("1" + " de " + String(self.maxRondas))
+        }
         parcialScore.setText(labelScore)
         clearLast.setEnabled(false)
        
@@ -102,7 +106,11 @@ class AnotateInterfaceController: WKInterfaceController {
             WKInterfaceController.reloadRootControllers(withNames: ["ResultsController"], contexts: [tiradas])
             
         } else {
-            numRonda.setText(String(ronda) + " de " + String(self.maxRondas))
+            if maxRondas == 100 {
+                numRonda.setText(String(ronda))
+            } else {
+                numRonda.setText(String(ronda) + " de " + String(self.maxRondas))
+            }
             next.setEnabled(false)
             endButton.setEnabled(false)
             enableButtons()
