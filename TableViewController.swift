@@ -159,7 +159,7 @@ class TableViewController: UITableViewController, MFMailComposeViewControllerDel
         print ("Export")
         // Preparacion para exportar a CSV
         
-        var csv = "Fecha,Dist,Tiros,Total,Media,Std,M,P1,P2,P3,P4,P5,P6,P7,P8,P9,P10,X\n"
+        var csv = "Fecha,Dist,Tiros,Total,Media,Std,M-P1-P2-P3-P4-P5-P6-P7-P8-P9-P10-X\n"
         for i in 1..<self.results.count {
             print (i)
             let reg = results[i]
@@ -204,7 +204,8 @@ class TableViewController: UITableViewController, MFMailComposeViewControllerDel
             composeVC.mailComposeDelegate = self
             
             // Configure the fields of the interface.
-            composeVC.setToRecipients(["rriosalido@icloud.com"])
+            //composeVC.setToRecipients(["e-mail adress"])
+            composeVC.setToRecipients([""])
             composeVC.setSubject("Fichero Tiradas")
             composeVC.setMessageBody("Fichero CSV de Tiradas", isHTML: false)
             
