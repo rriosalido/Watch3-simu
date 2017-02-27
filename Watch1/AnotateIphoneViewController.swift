@@ -145,15 +145,16 @@ class AnotateIphoneViewController: UIViewController {
             alertController.addAction(actionNo)
             self.present(alertController, animated: true, completion:nil)
             
-            
-            
-            
         } else {
+          
             if maxRondas == 100 {
                 numRonda.text = "Ronda Nº " + String(ronda)
             } else {
                 numRonda.text = "Ronda Nº " + String(ronda) + " de " + String(maxRondas)
             }
+            let media = media_Parcial()
+            numFlecha.text = "Flechas: " + String(maxFlechas) + "     Media: " + String(media)
+            
             nextButton.isEnabled = false
             nextButton.alpha = 0.5
             endButton.isEnabled = true
@@ -163,6 +164,8 @@ class AnotateIphoneViewController: UIViewController {
             puntosTirada = []
             labelScore = " "
             parcialScore.text = labelScore
+            clearLast.isEnabled = false
+            clearLast.alpha = 0.5
         }
     }
     
@@ -341,8 +344,13 @@ class AnotateIphoneViewController: UIViewController {
         endButton.alpha = 1.0
     }
     
-    
-
+    func media_Parcial() -> Double {
+        let tabla = tablaFreq(tiradas)
+        let arrayString = tabla.map {String($0)}
+        let stabla = arrayString.joined(separator: "-")
+        let myshot = statS(stabla)
+        return myshot.media
+    }
 
     /*
      // MARK: - Navigation

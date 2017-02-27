@@ -63,7 +63,8 @@ class AnotateInterfaceController: WKInterfaceController {
         if maxRondas == 100 {
             numRonda.setText("1")
         } else {
-            numRonda.setText("1" + " de " + String(self.maxRondas))
+            //numRonda.setText("1" + " de " + String(self.maxRondas))
+            numRonda.setText("1" + "/" + String(self.maxRondas))
         }
         parcialScore.setText(labelScore)
         clearLast.setEnabled(false)
@@ -109,7 +110,11 @@ class AnotateInterfaceController: WKInterfaceController {
             if maxRondas == 100 {
                 numRonda.setText(String(ronda))
             } else {
-                numRonda.setText(String(ronda) + " de " + String(self.maxRondas))
+                //numRonda.setText(String(ronda) + " de " + String(self.maxRondas))
+                let media = media_Parcial()
+                numRonda.setText(String(ronda)+"/" + String(self.maxRondas) + "  Media:"+String(media))
+                
+                print (media)
             }
             next.setEnabled(false)
             endButton.setEnabled(true)
@@ -221,5 +226,13 @@ class AnotateInterfaceController: WKInterfaceController {
         }
         endButton.setEnabled(true)
     }
+    
+    func media_Parcial() -> Double {
+        let tabla = tablaFreq(tiradas)
+        let arrayString = tabla.map {String($0)}
+        let stabla = arrayString.joined(separator: "-")
+        let myshot = statS(stabla)
+        return myshot.media
+        }
     
 }

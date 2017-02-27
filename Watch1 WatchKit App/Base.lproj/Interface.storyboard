@@ -186,11 +186,12 @@
                                                 </group>
                                                 <group width="1" alignment="left" spacing="4" id="D7L-do-9w7">
                                                     <items>
-                                                        <label alignment="left" text="      Ronda Nº:" id="etO-F1-VI6">
+                                                        <label alignment="left" text="Round:" id="etO-F1-VI6">
+                                                            <color key="textColor" red="1" green="0.73603635489999997" blue="0.1231509098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="font" type="system" pointSize="15"/>
                                                         </label>
                                                         <label alignment="left" text="5" id="6pR-GT-JXS">
-                                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" red="1" green="0.092997964419999996" blue="0.078115335790000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="font" type="system" pointSize="15"/>
                                                         </label>
                                                     </items>
