@@ -160,7 +160,7 @@ class TableViewController: UITableViewController, MFMailComposeViewControllerDel
         // Preparacion para exportar a CSV
         
         var csv = "Fecha,Dist,Tiros,Total,Media,Std,M-P1-P2-P3-P4-P5-P6-P7-P8-P9-P10-X\n"
-        for i in 1..<self.results.count {
+        for i in 0..<self.results.count {
             print (i)
             let reg = results[i]
             let fecha = decodeDate(reg.fecha)

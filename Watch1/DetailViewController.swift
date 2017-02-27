@@ -91,8 +91,8 @@ class DetailViewController: UIViewController {
         barChartView.data = chartData
         barChartView.chartDescription?.text = nil
         //chartDataSet.colors = ChartColorTemplates.colorful()
-        chartDataSet.colors = [.green, .white, .lightGray,.darkGray,.black,.cyan,.blue,.magenta,.red,.yellow,.orange,.brown]
-        //chartDataSet.colors = [.green, .white, .white, .black,.black,.blue,.blue,.red,.red,.yellow,.yellow,.yellow]
+        //chartDataSet.colors = [.green, .white, .lightGray,.darkGray,.black,.cyan,.blue,.magenta,.red,.yellow,.orange,.brown]
+        chartDataSet.colors = [.green, .white, .white, .black,.black,.blue,.blue,.red,.red,.yellow,.yellow,.yellow]
         let labels = ["M","1","2","3","4","5","6","7","8","9","10","X"]
         barChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: labels)
         barChartView.xAxis.granularityEnabled = true
