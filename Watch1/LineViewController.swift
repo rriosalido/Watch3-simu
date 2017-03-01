@@ -31,13 +31,14 @@ class LineViewController: UIViewController {
         
         let realmFile = Realm.Configuration.defaultConfiguration.fileURL!
         print (realmFile)
-        print (dataDB.count)
-        var data = getData(dataDB)
-        data = sumaDiasDuplicados(data)
         
-        self.segmentedControl.selectedSegmentIndex = 5
-        
-        setChart(data)
+        if dataDB.count > 0 {
+            print (dataDB.count)
+            var data = getData(dataDB)
+            data = sumaDiasDuplicados(data)
+            self.segmentedControl.selectedSegmentIndex = 5
+            setChart(data)
+        }
         
         
     }
