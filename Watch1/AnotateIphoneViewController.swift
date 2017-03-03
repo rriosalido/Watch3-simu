@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import AVFoundation
 
 class AnotateIphoneViewController: UIViewController {
     
@@ -24,8 +25,7 @@ class AnotateIphoneViewController: UIViewController {
     var labelScore = " "
     
     let userDefaults = UserDefaults.standard
-
-    
+    let systemSoundID: SystemSoundID = 1105
     // MARK: Outlets
     
     
@@ -86,6 +86,7 @@ class AnotateIphoneViewController: UIViewController {
     
     @IBAction func nextRonda() {
         print ("Next Ronda")
+        AudioServicesPlaySystemSound (systemSoundID)
         ronda += 1
         
         if ronda > maxRondas {
@@ -170,7 +171,7 @@ class AnotateIphoneViewController: UIViewController {
     }
     
     func numberPressed (_ value : String){
-        
+        AudioServicesPlaySystemSound (systemSoundID)
         numShots += 1
         if numShots >= 1 {
             endButton.isEnabled = true
@@ -189,6 +190,8 @@ class AnotateIphoneViewController: UIViewController {
     
     
     @IBAction func deleteLast() {
+        
+        AudioServicesPlaySystemSound (systemSoundID)
         
         if numShots == maxFlechas {
             tiradas.remove(at: (tiradas.count) - 1)
@@ -219,7 +222,7 @@ class AnotateIphoneViewController: UIViewController {
     @IBAction func endTirada() {
         // no se llega al maximo de tiradas, pero se finaliza
         // pasa directamente a resultados
-        
+        AudioServicesPlaySystemSound (systemSoundID)
         if numShots < maxFlechas {
             finFlechas()
         }
