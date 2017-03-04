@@ -63,7 +63,8 @@ class LineViewController: UIViewController {
             let std = data[i].std
             let upEntry = ChartDataEntry(x:Double(i), y:(data[i].media)+std)
             let doEntry = ChartDataEntry(x:Double(i), y:(data[i].media)-std)
-            let label = data[i].dia
+            var label = data[i].dia
+            label = label.replacingOccurrences(of: "/20", with: "/")
             dataEntries.append(dataEntry)
             upEntries.append(upEntry)
             doEntries.append(doEntry)
@@ -103,7 +104,9 @@ class LineViewController: UIViewController {
         
         
         lineChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: labels)
-        //lineChartView.xAxis.granularity = 1.0
+        
+        lineChartView.xAxis.granularityEnabled = true
+        lineChartView.xAxis.granularity = 5.0
         
         lineChartView.leftAxis.axisMinimum = 0.0
         lineChartView.leftAxis.axisMaximum = 10.5
