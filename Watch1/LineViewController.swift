@@ -81,7 +81,7 @@ class LineViewController: UIViewController {
         lineChartDataSet.highlightColor = UIColor.black
         lineChartDataSet.drawCircleHoleEnabled = true
         lineChartDataSet.setColor(.red)
-        
+
         let upChartDataSet = LineChartDataSet(values: upEntries, label: "+STD")
         upChartDataSet.setCircleColor(UIColor.blue) // our circle will be dark red
         upChartDataSet.lineWidth = 1.0
@@ -106,12 +106,15 @@ class LineViewController: UIViewController {
         lineChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: labels)
         
         lineChartView.xAxis.granularityEnabled = true
-        lineChartView.xAxis.granularity = 5.0
+        lineChartView.xAxis.granularity = 3.0
         
         lineChartView.leftAxis.axisMinimum = 0.0
         lineChartView.leftAxis.axisMaximum = 10.5
         lineChartView.rightAxis.axisMinimum = 0.0
         lineChartView.rightAxis.axisMaximum = 10.5
+        
+        //lineChartView.drawMarkers = true
+        //lineChartView.marker =
         
         var dataSets : [LineChartDataSet] = [LineChartDataSet]()
         dataSets.append(lineChartDataSet)
