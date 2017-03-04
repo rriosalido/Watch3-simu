@@ -107,15 +107,13 @@ class AnotateInterfaceController: WKInterfaceController {
             WKInterfaceController.reloadRootControllers(withNames: ["ResultsController"], contexts: [tiradas])
             
         } else {
-            if maxRondas == 100 {
-                numRonda.setText(String(ronda))
-            } else {
-                //numRonda.setText(String(ronda) + " de " + String(self.maxRondas))
-                let media = media_Parcial()
-                numRonda.setText(String(ronda)+"/" + String(self.maxRondas) + "  Media:"+String(media))
-                
-                print (media)
+            var texto = String(ronda)
+            if maxRondas != 100 {
+                texto = texto + "/" + String(self.maxRondas)
             }
+            let media = media_Parcial()
+            numRonda.setText(texto + "  Media: " + String(media))
+            
             next.setEnabled(false)
             endButton.setEnabled(true)
             enableButtons()
