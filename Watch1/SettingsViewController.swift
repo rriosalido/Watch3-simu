@@ -95,7 +95,5 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         
         print (dist, rondas, flechas)
     }
-    
-    
-    
+  
 }
